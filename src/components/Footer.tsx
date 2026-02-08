@@ -74,8 +74,7 @@ export default function Footer() {
                 { href: "#oplossing", label: "Oplossing" },
                 { href: "#diensten", label: "Diensten" },
                 { href: "#werkwijze", label: "Werkwijze" },
-                { href: "#referenties", label: "Referenties" },
-                { href: "#contact", label: "Contact" },
+                { href: "#contact", label: "AI-Scan" },
               ].map((link) => (
                 <li key={link.href}>
                   <a
