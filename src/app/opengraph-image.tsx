@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
-export const alt = "John Automations — AI & Automatisering voor het MKB";
+export const alt = "Melvin Automations — AI & Automatisering voor het MKB";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -54,7 +54,7 @@ export default async function Image() {
             ⚡
           </div>
           <span style={{ fontSize: 36, fontWeight: 800, color: "white" }}>
-            John
+            Melvin
           </span>
           <span style={{ fontSize: 36, fontWeight: 800, color: "#818cf8" }}>
             Automations

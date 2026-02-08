@@ -427,7 +427,7 @@ export default function AIScanQuiz() {
   const handleSubmitForm = async () => {
     setSubmitStatus("sending");
     try {
-      const response = await fetch("https://formsubmit.co/ajax/john.automations.nl@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/melvinthewebdesigner@gmail.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -555,7 +555,7 @@ export default function AIScanQuiz() {
                         Opnieuw proberen
                       </button>
                       <a
-                        href="mailto:john.automations.nl@gmail.com"
+                        href="mailto:melvinthewebdesigner@gmail.com"
                         className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-600 text-dark-300 hover:text-white rounded-xl transition-all"
                       >
                         <Mail className="w-4 h-4" />

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://john-automations-website.vercel.app/sitemap.xml
+Sitemap: https://melvin-automations.vercel.app/sitemap.xml
