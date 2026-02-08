@@ -87,7 +87,7 @@ export default function Hero() {
             </a>
             <a
               href="#diensten"
-              className="inline-flex items-center gap-2 px-8 py-4 text-dark-300 hover:text-white border border-dark-700 hover:border-dark-500 rounded-xl transition-all duration-300 hover:bg-white/5"
+              className="inline-flex items-center gap-2 px-8 py-4 text-dark-200 hover:text-white border border-dark-500 hover:border-brand-500/50 rounded-xl transition-all duration-300 hover:bg-white/5"
             >
               Bekijk Diensten
             </a>
