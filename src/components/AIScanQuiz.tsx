@@ -422,17 +422,43 @@ export default function AIScanQuiz() {
   const score = calculateScore(answers);
   const recommendations = getRecommendations(answers);
 
-  const mailSubject = encodeURIComponent(
-    `AI-Scan aanvraag — ${answers.bedrijf || answers.naam}`
-  );
-  const mailBody = encodeURIComponent(
-    `Hallo John,\n\nIk heb de AI-Scan Quiz ingevuld en wil graag een vrijblijvend gesprek.\n\n` +
-      `Naam: ${answers.naam}\nE-mail: ${answers.email}\nBedrijf: ${answers.bedrijf}\nTelefoon: ${answers.telefoon}\n` +
-      `Branche: ${answers.branche}\nMedewerkers: ${answers.medewerkers}\nAdmin-uren/week: ${answers.adminUren}\n` +
-      `Tijdrovende taken: ${answers.taken.join(", ")}\nAI-gebruik: ${answers.aiGebruik}\n` +
-      `Automatiseringspotentieel: ${score}%\n\nMet vriendelijke groet,\n${answers.naam}`
-  );
-  const mailtoLink = `mailto:john.automations.nl@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const handleSubmitForm = async () => {
+    setSubmitStatus("sending");
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/john.automations.nl@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `🤖 AI-Scan aanvraag — ${answers.bedrijf || answers.naam} (Score: ${score}%)`,
+          Naam: answers.naam,
+          Email: answers.email,
+          Bedrijf: answers.bedrijf || "Niet ingevuld",
+          Telefoon: answers.telefoon || "Niet ingevuld",
+          Branche: answers.branche,
+          Medewerkers: answers.medewerkers,
+          "Admin-uren per week": answers.adminUren,
+          "Tijdrovende taken": answers.taken.join(", "),
+          "AI-gebruik": answers.aiGebruik,
+          "Automatiseringsscore": `${score}%`,
+          "Aanbevelingen": recommendations.join(" | "),
+          _template: "table",
+        }),
+      });
+      const data = await response.json();
+      if (data.success === "true" || data.success === true) {
+        setSubmitStatus("sent");
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch {
+      setSubmitStatus("error");
+    }
+  };
 
   /* ---------------------------------------------------------------- */
   /*  Results screen                                                   */
@@ -450,22 +476,22 @@ export default function AIScanQuiz() {
             className="max-w-2xl mx-auto"
           >
             {/* Glass card */}
-            <div className="p-8 sm:p-10 rounded-2xl bg-dark-900/60 border border-dark-700/50 backdrop-blur-xl shadow-2xl shadow-brand-500/5">
+            <div className="p-5 sm:p-8 md:p-10 rounded-2xl bg-dark-900/60 border border-dark-700/50 backdrop-blur-xl shadow-2xl shadow-brand-500/5">
               {/* Header */}
-              <div className="text-center mb-8">
+              <div className="text-center mb-6 sm:mb-8">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-brand-400 bg-brand-500/10 border border-brand-500/20 rounded-full mb-6"
+                  className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-brand-400 bg-brand-500/10 border border-brand-500/20 rounded-full mb-4 sm:mb-6"
                 >
                   <Sparkles className="w-3.5 h-3.5" />
                   Uw AI-Scan Resultaat
                 </motion.div>
-                <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
                   Automatiseringspotentieel
                 </h2>
-                <p className="text-dark-400">
+                <p className="text-sm sm:text-base text-dark-400">
                   Op basis van uw antwoorden zien we volop kansen
                 </p>
               </div>
@@ -506,17 +532,65 @@ export default function AIScanQuiz() {
                 transition={{ delay: 2 }}
                 className="mt-10 text-center"
               >
-                <a
-                  href={mailtoLink}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-brand-500/25 hover:-translate-y-0.5"
-                >
-                  <Mail className="w-5 h-5" />
-                  Gratis AI-Scan Gesprek Inplannen
-                </a>
-                <p className="text-xs text-dark-500 mt-4">
-                  30 minuten vrijblijvend gesprek + concreet rapport met
-                  aanbevelingen
-                </p>
+                {submitStatus === "sent" ? (
+                  <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+                    <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
+                    <p className="text-white font-semibold mb-1">Verstuurd!</p>
+                    <p className="text-sm text-dark-400">
+                      We nemen zo snel mogelijk contact met u op voor een gratis AI-Scan gesprek.
+                    </p>
+                  </div>
+                ) : submitStatus === "error" ? (
+                  <div className="space-y-4">
+                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30">
+                      <p className="text-sm text-red-300">
+                        Er ging iets mis. Probeer het opnieuw of mail ons direct.
+                      </p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                      <button
+                        onClick={handleSubmitForm}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all"
+                      >
+                        Opnieuw proberen
+                      </button>
+                      <a
+                        href="mailto:john.automations.nl@gmail.com"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-600 text-dark-300 hover:text-white rounded-xl transition-all"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Direct mailen
+                      </a>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      onClick={handleSubmitForm}
+                      disabled={submitStatus === "sending"}
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 disabled:bg-brand-800 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-brand-500/25 hover:-translate-y-0.5 disabled:hover:translate-y-0 disabled:cursor-wait min-h-[56px]"
+                    >
+                      {submitStatus === "sending" ? (
+                        <>
+                          <svg className="animate-spin w-5 h-5" viewBox="0 0 24 24" fill="none">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                          </svg>
+                          Versturen...
+                        </>
+                      ) : (
+                        <>
+                          <Mail className="w-5 h-5" />
+                          Gratis AI-Scan Gesprek Inplannen
+                        </>
+                      )}
+                    </button>
+                    <p className="text-xs text-dark-500 mt-4">
+                      30 minuten vrijblijvend gesprek + concreet rapport met
+                      aanbevelingen
+                    </p>
+                  </>
+                )}
               </motion.div>
             </div>
           </motion.div>
@@ -565,10 +639,10 @@ export default function AIScanQuiz() {
           <span className="inline-block px-4 py-1.5 text-xs font-medium text-brand-400 bg-brand-500/10 border border-brand-500/20 rounded-full mb-4">
             Gratis AI-Scan
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-balance">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-balance">
             Ontdek uw automatiseringspotentieel
           </h2>
-          <p className="mt-4 text-lg text-dark-400 max-w-2xl mx-auto text-balance">
+          <p className="mt-4 text-base sm:text-lg text-dark-400 max-w-2xl mx-auto text-balance px-2">
             Beantwoord 6 korte vragen en ontvang direct een persoonlijke
             AI-score met concrete aanbevelingen voor uw bedrijf.
           </p>
@@ -582,7 +656,7 @@ export default function AIScanQuiz() {
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="p-8 sm:p-10 rounded-2xl bg-dark-900/60 border border-dark-700/50 backdrop-blur-xl shadow-2xl shadow-brand-500/5">
+          <div className="p-5 sm:p-8 md:p-10 rounded-2xl bg-dark-900/60 border border-dark-700/50 backdrop-blur-xl shadow-2xl shadow-brand-500/5">
             <ProgressBar step={step} />
 
             <AnimatePresence mode="wait" custom={direction}>
@@ -596,15 +670,15 @@ export default function AIScanQuiz() {
                 transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 {/* Step header */}
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="w-10 h-10 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+                <div className="flex items-start sm:items-center gap-3 mb-2">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
                     <StepIcon className="w-5 h-5 text-brand-400" />
                   </div>
-                  <h3 className="text-xl font-bold text-white">
+                  <h3 className="text-lg sm:text-xl font-bold text-white">
                     {stepTitles[step]}
                   </h3>
                 </div>
-                <p className="text-sm text-dark-400 mb-6 ml-[52px]">
+                <p className="text-sm text-dark-400 mb-6 ml-0 sm:ml-[52px]">
                   {stepDescriptions[step]}
                 </p>
 

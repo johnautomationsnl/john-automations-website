@@ -9,8 +9,7 @@ const navLinks = [
   { href: "#oplossing", label: "Oplossing" },
   { href: "#diensten", label: "Diensten" },
   { href: "#werkwijze", label: "Werkwijze" },
-  { href: "#referenties", label: "Referenties" },
-  { href: "#contact", label: "Contact" },
+  { href: "#contact", label: "AI-Scan" },
 ];
 
 export default function Navbar() {
