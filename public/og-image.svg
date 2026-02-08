@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="none" stroke="url(#brand)" stroke-width="1" opacity="0.3"/>
+  <text x="100" y="220" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="72" fill="white">John</text>
+  <text x="310" y="220" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="72" fill="url(#brand)">Automations</text>
+  <text x="100" y="310" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="42" fill="#818cf8">Uw bedrijf. Slimmer geautomatiseerd.</text>
+  <text x="100" y="380" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="28" fill="#94a3b8">AI-specialist voor het Nederlandse MKB</text>
+  <text x="100" y="420" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="28" fill="#94a3b8">Custom software · Procesautomatisering · AI-integraties</text>
+  <rect x="100" y="470" width="320" height="56" rx="12" fill="url(#brand)"/>
+  <text x="260" y="506" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="600" font-size="22" fill="white">Gratis AI-Scan Aanvragen</text>
+  <circle cx="1000" cy="315" r="140" fill="none" stroke="url(#brand)" stroke-width="4" opacity="0.2"/>
+  <circle cx="1000" cy="315" r="100" fill="none" stroke="url(#brand)" stroke-width="3" opacity="0.15"/>
+  <path d="M970 260 L1030 260 L1000 310 L1020 310 L980 370 L990 330 L970 330 Z" fill="url(#brand)" opacity="0.8"/>
+</svg>

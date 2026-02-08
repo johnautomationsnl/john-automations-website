@@ -1,0 +1,94 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { MapPin, Zap, Users, Coffee } from "lucide-react";
+import SectionWrapper, { SectionHeader } from "./SectionWrapper";
+
+const highlights = [
+  {
+    icon: MapPin,
+    label: "Zuid-Limburg",
+    desc: "Lokaal & persoonlijk",
+  },
+  {
+    icon: Zap,
+    label: "AI-First",
+    desc: "Altijd de nieuwste technologie",
+  },
+  {
+    icon: Users,
+    label: "MKB-Focus",
+    desc: "Gebouwd voor ondernemers",
+  },
+  {
+    icon: Coffee,
+    label: "Persoonlijk",
+    desc: "Geen callcenter, direct contact",
+  },
+];
+
+export default function About() {
+  return (
+    <SectionWrapper id="over" className="relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/10 to-transparent" />
+
+      <div className="relative">
+        <SectionHeader
+          badge="Over John Automations"
+          title="De mens achter de technologie"
+          description=""
+        />
+
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="p-6 sm:p-10 rounded-2xl bg-dark-900/50 border border-dark-800"
+          >
+            <div className="space-y-4 text-dark-300 leading-relaxed">
+              <p className="text-base sm:text-lg">
+                Hallo! Ik ben <span className="text-white font-semibold">John</span>, AI-specialist
+                en software developer uit Zuid-Limburg. Ik help ondernemers in het MKB om{" "}
+                <span className="text-brand-400">slimmer te werken</span> met op maat gemaakte
+                AI-oplossingen en automatiseringen.
+              </p>
+              <p className="text-base sm:text-lg">
+                Wat mij drijft? Ik zie dagelijks ondernemers die{" "}
+                <span className="text-white">uren verspillen</span> aan taken die een computer
+                in seconden kan doen. Van het handmatig opvolgen van leads tot het overtypen van
+                gegevens — het kan allemaal slimmer. En dat is precies wat ik bouw.
+              </p>
+              <p className="text-base sm:text-lg">
+                Geen standaard pakketten, geen one-size-fits-all. Elke oplossing wordt{" "}
+                <span className="text-brand-400">specifiek voor uw bedrijf</span> ontwikkeld.
+                En het mooiste? U hoeft er zelf niets van te begrijpen — dat is mijn werk.
+              </p>
+            </div>
+
+            {/* Highlights grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-dark-800/50">
+              {highlights.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 * i, duration: 0.4 }}
+                  className="text-center"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center mx-auto mb-2">
+                    <item.icon className="w-5 h-5 text-brand-400" />
+                  </div>
+                  <p className="text-sm font-semibold text-white">{item.label}</p>
+                  <p className="text-xs text-dark-500 mt-0.5">{item.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </SectionWrapper>
+  );
+}

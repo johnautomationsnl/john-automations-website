@@ -20,6 +20,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://john-automations-website.vercel.app"),
   title: "John Automations | AI & Automatisering voor het MKB",
   description:
     "AI-specialist voor het Nederlandse MKB. Custom software, procesautomatisering en AI-integraties die uw bedrijf transformeren. Vraag een gratis AI-Scan aan.",
@@ -35,12 +36,25 @@ export const metadata: Metadata = {
     "bouw",
   ],
   authors: [{ name: "John Automations" }],
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     title: "John Automations | AI & Automatisering voor het MKB",
     description:
-      "AI-specialist voor het Nederlandse MKB. Custom software, procesautomatisering en AI-integraties.",
+      "AI-specialist voor het Nederlandse MKB. Custom software, procesautomatisering en AI-integraties die uw bedrijf transformeren.",
     type: "website",
     locale: "nl_NL",
+    siteName: "John Automations",
+    images: ["/opengraph-image"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "John Automations | AI & Automatisering voor het MKB",
+    description:
+      "AI-specialist voor het Nederlandse MKB. Custom software, procesautomatisering en AI-integraties.",
+    images: ["/opengraph-image"],
   },
 };
 

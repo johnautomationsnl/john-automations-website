@@ -119,7 +119,7 @@ export default function Services() {
                 href="#contact"
                 className={`inline-flex items-center gap-1.5 text-sm font-medium ${service.iconColor} hover:gap-3 transition-all`}
               >
-                Meer informatie
+                AI-Scan starten
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
