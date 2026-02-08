@@ -34,7 +34,7 @@ export default function About() {
 
       <div className="relative">
         <SectionHeader
-          badge="Over John Automations"
+          badge="Over Melvin Automations"
           title="De mens achter de technologie"
           description=""
         />
@@ -49,7 +49,7 @@ export default function About() {
           >
             <div className="space-y-4 text-dark-300 leading-relaxed">
               <p className="text-base sm:text-lg">
-                Hallo! Ik ben <span className="text-white font-semibold">John</span>, AI-specialist
+                Hallo! Ik ben <span className="text-white font-semibold">Melvin</span>, AI-specialist
                 en software developer uit Zuid-Limburg. Ik help ondernemers in het MKB om{" "}
                 <span className="text-brand-400">slimmer te werken</span> met op maat gemaakte
                 AI-oplossingen en automatiseringen.

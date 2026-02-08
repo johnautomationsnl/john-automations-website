@@ -41,7 +41,7 @@ export default function Navbar() {
               <div className="absolute inset-0 w-7 h-7 bg-brand-400/20 rounded-full blur-lg group-hover:bg-brand-300/30 transition-colors" />
             </div>
             <span className="text-lg font-bold text-white">
-              John<span className="text-brand-400">Automations</span>
+              Melvin<span className="text-brand-400">Automations</span>
             </span>
           </a>
 
