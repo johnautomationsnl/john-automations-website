@@ -10,7 +10,7 @@ const services = [
     title: "AI Integratie",
     description:
       "Integreer krachtige AI-modellen in uw bestaande workflows. Van slimme data-analyse tot geautomatiseerde besluitvorming — wij verbinden AI naadloos met uw systemen.",
-    features: ["GPT & LLM Integraties", "Slimme Data-Analyse", "Voorspellende Modellen"],
+    features: ["Makelaar genereert woningbeschrijving in 30 sec", "Aannemer krijgt automatische materiaallijsten", "Accountant verwerkt 50 facturen per uur"],
     gradient: "from-blue-500/10 to-indigo-500/10",
     iconBg: "bg-blue-500/10",
     iconColor: "text-blue-400",
@@ -20,7 +20,7 @@ const services = [
     title: "Custom Software",
     description:
       "Op maat gebouwde applicaties die perfect passen bij uw bedrijfsprocessen. Van webapplicaties tot interne tools — altijd gebouwd voor schaalbaarheid.",
-    features: ["Webapplicaties", "Interne Dashboards", "API-Koppelingen"],
+    features: ["Klantportaal met realtime projectstatus", "Dashboard met live bedrijfsoverzicht", "Koppeling tussen uw boekhoudsoftware en CRM"],
     gradient: "from-emerald-500/10 to-teal-500/10",
     iconBg: "bg-emerald-500/10",
     iconColor: "text-emerald-400",
@@ -30,7 +30,7 @@ const services = [
     title: "Proces Automatisering",
     description:
       "Automatiseer repetitieve bedrijfsprocessen en bespaar uren per week. Van facturatie tot lead-opvolging — laat technologie het zware werk doen.",
-    features: ["Workflow Automatisering", "E-mail Automatisering", "CRM Koppelingen"],
+    features: ["Offerte binnen 2 minuten verstuurd", "Leads automatisch opgevolgd na 24 uur", "Klantgegevens direct in uw systeem"],
     gradient: "from-purple-500/10 to-violet-500/10",
     iconBg: "bg-purple-500/10",
     iconColor: "text-purple-400",
@@ -40,7 +40,7 @@ const services = [
     title: "AI Chatbots",
     description:
       "Intelligente chatbots die 24/7 uw klanten helpen, leads kwalificeren en afspraken inplannen. Getraind op uw bedrijfsinformatie voor relevante antwoorden.",
-    features: ["24/7 Klantenservice", "Lead Kwalificatie", "Afspraken Inplannen"],
+    features: ["Klant krijgt om 3 uur 's nachts antwoord", "Bot plant bezichtiging zonder tussenkomst", "Afspraak staat direct in uw agenda"],
     gradient: "from-amber-500/10 to-orange-500/10",
     iconBg: "bg-amber-500/10",
     iconColor: "text-amber-400",
