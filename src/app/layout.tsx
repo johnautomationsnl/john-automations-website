@@ -1,16 +1,26 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
+import { Bricolage_Grotesque, Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  weight: ["200", "300", "400", "600", "700", "800"],
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-space-grotesk",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains",
+  weight: ["300", "400", "500"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -66,7 +76,7 @@ export default function RootLayout({
   return (
     <html lang="nl" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-dark-950 text-dark-50`}
+        className={`${bricolage.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans antialiased bg-dark-950 text-warm-100`}
       >
         {children}
       </body>

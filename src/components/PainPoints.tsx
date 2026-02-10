@@ -46,9 +46,7 @@ const painPoints = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -75,23 +73,22 @@ export default function PainPoints() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
       >
         {painPoints.map((point, i) => (
           <motion.div
             key={i}
             variants={itemVariants}
-            className="group relative p-6 rounded-2xl bg-dark-900/50 border border-dark-800 hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1"
+            className="group relative p-6 rounded-2xl warm-card hover:border-accent-700/30 transition-all duration-500 hover:-translate-y-0.5"
           >
-            <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             <div className="relative">
-              <div className="w-12 h-12 rounded-xl bg-red-500/10 flex items-center justify-center mb-4 group-hover:bg-red-500/20 transition-colors">
-                <point.icon className="w-6 h-6 text-red-400" />
+              <div className="w-10 h-10 rounded-xl bg-accent-800/20 flex items-center justify-center mb-4 group-hover:bg-accent-700/20 transition-colors">
+                <point.icon className="w-5 h-5 text-accent-400" />
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="font-display text-lg font-700 text-warm-100 mb-2">
                 {point.title}
               </h3>
-              <p className="text-dark-400 text-sm leading-relaxed">
+              <p className="text-warm-500 text-sm leading-relaxed font-light">
                 {point.description}
               </p>
             </div>

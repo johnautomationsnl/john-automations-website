@@ -30,7 +30,7 @@ const highlights = [
 export default function About() {
   return (
     <SectionWrapper id="over" className="relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/5 to-transparent" />
 
       <div className="relative">
         <SectionHeader
@@ -39,24 +39,24 @@ export default function About() {
           description=""
         />
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="p-6 sm:p-10 rounded-2xl bg-dark-900/50 border border-dark-800"
+            className="p-6 sm:p-9 rounded-2xl warm-card"
           >
-            <div className="space-y-4 text-dark-300 leading-relaxed">
+            <div className="space-y-4 text-warm-400 leading-relaxed font-light">
               <p className="text-base sm:text-lg">
-                Hallo! Ik ben <span className="text-white font-semibold">Melvin</span>, AI-specialist
+                Hallo! Ik ben <span className="text-warm-100 font-medium">Melvin</span>, AI-specialist
                 en software developer uit Zuid-Limburg. Ik help ondernemers in het MKB om{" "}
                 <span className="text-brand-400">slimmer te werken</span> met op maat gemaakte
                 AI-oplossingen en automatiseringen.
               </p>
               <p className="text-base sm:text-lg">
                 Wat mij drijft? Ik zie dagelijks ondernemers die{" "}
-                <span className="text-white">uren verspillen</span> aan taken die een computer
+                <span className="text-warm-100">uren verspillen</span> aan taken die een computer
                 in seconden kan doen. Van het handmatig opvolgen van leads tot het overtypen van
                 gegevens. Het kan allemaal slimmer. En dat is precies wat ik bouw.
               </p>
@@ -68,21 +68,21 @@ export default function About() {
             </div>
 
             {/* Highlights grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-dark-800/50">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-8 border-t border-warm-800/15">
               {highlights.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.1 * i, duration: 0.4 }}
+                  transition={{ delay: 0.08 * i, duration: 0.4 }}
                   className="text-center"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-brand-500/10 flex items-center justify-center mx-auto mb-2">
+                  <div className="w-10 h-10 rounded-xl bg-brand-900/20 flex items-center justify-center mx-auto mb-2">
                     <item.icon className="w-5 h-5 text-brand-400" />
                   </div>
-                  <p className="text-sm font-semibold text-white">{item.label}</p>
-                  <p className="text-xs text-dark-500 mt-0.5">{item.desc}</p>
+                  <p className="text-sm font-medium text-warm-200">{item.label}</p>
+                  <p className="text-[11px] text-warm-600 mt-0.5 font-light">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

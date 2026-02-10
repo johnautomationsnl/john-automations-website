@@ -14,16 +14,15 @@ const benefits = [
 ];
 
 const stats = [
-  { icon: Zap, value: "80%", label: "Tijdsbesparing", color: "text-brand-400" },
-  { icon: TrendingUp, value: "3x", label: "Meer Leads", color: "text-emerald-400" },
-  { icon: Shield, value: "99%", label: "Minder Fouten", color: "text-purple-400" },
+  { icon: Zap, value: "80%", label: "Tijdsbesparing", color: "text-brand-400", bg: "bg-brand-900/20" },
+  { icon: TrendingUp, value: "3x", label: "Meer Leads", color: "text-accent-400", bg: "bg-accent-900/20" },
+  { icon: Shield, value: "99%", label: "Minder Fouten", color: "text-brand-300", bg: "bg-brand-900/15" },
 ];
 
 export default function Solution() {
   return (
     <SectionWrapper id="oplossing" className="relative">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/20 to-dark-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/10 to-transparent" />
 
       <div className="relative">
         <SectionHeader
@@ -35,30 +34,30 @@ export default function Solution() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Benefits list */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="space-y-4"
+            className="space-y-3"
           >
             {benefits.map((benefit, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -15 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.1 }}
-                className="flex items-start gap-3 p-3 rounded-xl hover:bg-white/[0.02] transition-colors"
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="flex items-start gap-3 p-3 rounded-xl hover:bg-warm-900/10 transition-colors"
               >
                 <CheckCircle2 className="w-5 h-5 text-brand-400 mt-0.5 shrink-0" />
-                <span className="text-dark-200">{benefit}</span>
+                <span className="text-warm-300 font-light">{benefit}</span>
               </motion.div>
             ))}
           </motion.div>
 
           {/* Stats cards */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
@@ -70,17 +69,16 @@ export default function Solution() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="relative p-6 rounded-2xl bg-dark-900/50 border border-dark-800 text-center group hover:border-brand-500/20 transition-all"
+                transition={{ duration: 0.5, delay: i * 0.12 }}
+                className="relative p-6 rounded-2xl warm-card text-center group hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="relative">
-                  <stat.icon className={`w-8 h-8 ${stat.color} mx-auto mb-3`} />
-                  <div className={`text-3xl font-bold ${stat.color} mb-1`}>
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-dark-400">{stat.label}</div>
+                <div className={`w-10 h-10 rounded-xl ${stat.bg} flex items-center justify-center mx-auto mb-3`}>
+                  <stat.icon className={`w-5 h-5 ${stat.color}`} />
                 </div>
+                <div className={`font-display text-3xl font-800 ${stat.color} mb-1`}>
+                  {stat.value}
+                </div>
+                <div className="text-xs text-warm-500 font-mono uppercase tracking-wider">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>

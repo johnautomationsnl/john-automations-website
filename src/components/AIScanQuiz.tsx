@@ -103,7 +103,6 @@ function calculateScore(answers: QuizAnswers): number {
   }
 
   const raw = adminScore + taskScore + aiScore;
-  // Normalize to 25-97 range
   const normalized = Math.round(25 + ((raw - 15) / (110 - 15)) * 72);
   return Math.max(25, Math.min(97, normalized));
 }
@@ -132,14 +131,12 @@ const GENERIC_RECOMMENDATIONS = [
 function getRecommendations(answers: QuizAnswers): string[] {
   const recs: string[] = [];
 
-  // First add recommendations based on selected tasks
   for (const task of answers.taken) {
     if (TASK_RECOMMENDATIONS[task] && recs.length < 3) {
       recs.push(TASK_RECOMMENDATIONS[task]);
     }
   }
 
-  // Fill remaining slots with generic recommendations
   let i = 0;
   while (recs.length < 3 && i < GENERIC_RECOMMENDATIONS.length) {
     recs.push(GENERIC_RECOMMENDATIONS[i]);
@@ -157,13 +154,13 @@ function ProgressBar({ step }: { step: number }) {
   const progress = ((step + 1) / TOTAL_STEPS) * 100;
   return (
     <div className="w-full mb-8">
-      <div className="flex justify-between text-xs text-dark-500 mb-2">
+      <div className="flex justify-between text-[11px] font-mono tracking-wider uppercase text-warm-600 mb-2">
         <span>
           Stap {step + 1} van {TOTAL_STEPS}
         </span>
         <span>{Math.round(progress)}%</span>
       </div>
-      <div className="h-1.5 w-full bg-dark-800 rounded-full overflow-hidden">
+      <div className="h-1 w-full bg-dark-800 rounded-full overflow-hidden">
         <motion.div
           className="h-full bg-gradient-to-r from-brand-600 to-brand-400 rounded-full"
           initial={{ width: 0 }}
@@ -188,18 +185,18 @@ function OptionButton({
     <motion.button
       type="button"
       onClick={onClick}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.99 }}
       className={`w-full text-left px-5 py-4 rounded-xl border transition-all duration-200 ${
         selected
-          ? "bg-brand-500/15 border-brand-500/50 text-white shadow-lg shadow-brand-500/10"
-          : "bg-dark-800/30 border-dark-700/50 text-dark-300 hover:border-dark-600 hover:bg-dark-800/50"
+          ? "bg-brand-900/20 border-brand-700/40 text-warm-100 shadow-lg shadow-brand-900/10"
+          : "bg-dark-800/20 border-warm-800/15 text-warm-400 hover:border-warm-700/25 hover:bg-dark-800/30"
       }`}
     >
       <div className="flex items-center gap-3">
         <div
           className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all ${
-            selected ? "border-brand-400 bg-brand-500" : "border-dark-600"
+            selected ? "border-brand-400 bg-brand-500" : "border-warm-700"
           }`}
         >
           {selected && (
@@ -210,7 +207,7 @@ function OptionButton({
             />
           )}
         </div>
-        <span className="font-medium">{label}</span>
+        <span className="font-medium text-sm">{label}</span>
       </div>
     </motion.button>
   );
@@ -229,12 +226,12 @@ function MultiSelectButton({
     <motion.button
       type="button"
       onClick={onClick}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.99 }}
       className={`text-left px-5 py-4 rounded-xl border transition-all duration-200 ${
         selected
-          ? "bg-brand-500/15 border-brand-500/50 text-white shadow-lg shadow-brand-500/10"
-          : "bg-dark-800/30 border-dark-700/50 text-dark-300 hover:border-dark-600 hover:bg-dark-800/50"
+          ? "bg-brand-900/20 border-brand-700/40 text-warm-100 shadow-lg shadow-brand-900/10"
+          : "bg-dark-800/20 border-warm-800/15 text-warm-400 hover:border-warm-700/25 hover:bg-dark-800/30"
       }`}
     >
       <div className="flex items-center gap-3">
@@ -242,12 +239,12 @@ function MultiSelectButton({
           className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all ${
             selected
               ? "border-brand-400 bg-brand-500"
-              : "border-dark-600"
+              : "border-warm-700"
           }`}
         >
           {selected && <CheckCircle2 className="w-3.5 h-3.5 text-white" />}
         </div>
-        <span className="font-medium">{label}</span>
+        <span className="font-medium text-sm">{label}</span>
       </div>
     </motion.button>
   );
@@ -281,7 +278,7 @@ function AnimatedScore({ score }: { score: number }) {
           r="54"
           stroke="currentColor"
           className="text-dark-800"
-          strokeWidth="8"
+          strokeWidth="6"
           fill="none"
         />
         <motion.circle
@@ -289,7 +286,7 @@ function AnimatedScore({ score }: { score: number }) {
           cy="60"
           r="54"
           stroke="url(#scoreGradient)"
-          strokeWidth="8"
+          strokeWidth="6"
           fill="none"
           strokeLinecap="round"
           initial={{ strokeDashoffset: circumference }}
@@ -299,21 +296,21 @@ function AnimatedScore({ score }: { score: number }) {
         />
         <defs>
           <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#4f46e5" />
-            <stop offset="100%" stopColor="#818cf8" />
+            <stop offset="0%" stopColor="#1a6b52" />
+            <stop offset="100%" stopColor="#3ba683" />
           </linearGradient>
         </defs>
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <motion.span
-          className="text-4xl font-bold text-white"
+          className="font-display text-4xl font-800 text-warm-50"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
           {displayScore}%
         </motion.span>
-        <span className="text-xs text-dark-400 mt-1">potentieel</span>
+        <span className="text-[10px] font-mono tracking-wider uppercase text-warm-600 mt-1">potentieel</span>
       </div>
     </div>
   );
@@ -331,12 +328,12 @@ const STEP_ICONS = [Building2, Users, Clock, ListChecks, Bot, User];
 
 const slideVariants = {
   enter: (direction: number) => ({
-    x: direction > 0 ? 80 : -80,
+    x: direction > 0 ? 60 : -60,
     opacity: 0,
   }),
   center: { x: 0, opacity: 1 },
   exit: (direction: number) => ({
-    x: direction > 0 ? -80 : 80,
+    x: direction > 0 ? -60 : 60,
     opacity: 0,
   }),
 };
@@ -385,7 +382,6 @@ export default function AIScanQuiz() {
 
   const goNext = () => {
     if (step === 5) {
-      // Validate contact fields
       const errs: Record<string, string> = {};
       if (!answers.naam.trim()) errs.naam = "Naam is verplicht";
       if (!answers.email.trim()) errs.email = "E-mail is verplicht";
@@ -467,31 +463,30 @@ export default function AIScanQuiz() {
   if (done) {
     return (
       <SectionWrapper id="contact" className="relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/20 to-dark-950" />
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/10 to-dark-950" />
         <div className="relative">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="max-w-2xl mx-auto"
           >
-            {/* Glass card */}
-            <div className="p-5 sm:p-8 md:p-10 rounded-2xl bg-dark-900/60 border border-dark-700/50 backdrop-blur-xl shadow-2xl shadow-brand-500/5">
+            <div className="p-5 sm:p-8 md:p-10 rounded-2xl warm-card backdrop-blur-xl shadow-2xl shadow-brand-900/5">
               {/* Header */}
               <div className="text-center mb-6 sm:mb-8">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-medium text-brand-400 bg-brand-500/10 border border-brand-500/20 rounded-full mb-4 sm:mb-6"
+                  className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-mono tracking-[0.15em] uppercase text-brand-400 bg-brand-900/20 border border-brand-800/20 rounded-full mb-5"
                 >
-                  <Sparkles className="w-3.5 h-3.5" />
+                  <Sparkles className="w-3 h-3" />
                   Uw AI-Scan Resultaat
                 </motion.div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+                <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-800 text-warm-50 mb-2">
                   Automatiseringspotentieel
                 </h2>
-                <p className="text-sm sm:text-base text-dark-400">
+                <p className="text-sm sm:text-base text-warm-500 font-light">
                   Op basis van uw antwoorden zien we volop kansen
                 </p>
               </div>
@@ -500,25 +495,25 @@ export default function AIScanQuiz() {
               <AnimatedScore score={score} />
 
               {/* Recommendations */}
-              <div className="mt-10 space-y-4">
-                <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <div className="mt-10 space-y-3">
+                <h3 className="font-display text-lg font-700 text-warm-100 flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-brand-400" />
                   Onze top 3 aanbevelingen
                 </h3>
                 {recommendations.map((rec, i) => (
                   <motion.div
                     key={i}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 1.2 + i * 0.2 }}
-                    className="flex gap-3 p-4 rounded-xl bg-dark-800/40 border border-dark-700/40"
+                    transition={{ delay: 1.2 + i * 0.15 }}
+                    className="flex gap-3 p-4 rounded-xl bg-dark-800/30 border border-warm-800/10"
                   >
-                    <div className="flex-shrink-0 w-7 h-7 rounded-full bg-brand-500/20 flex items-center justify-center mt-0.5">
-                      <span className="text-xs font-bold text-brand-400">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-brand-900/30 flex items-center justify-center mt-0.5">
+                      <span className="text-[10px] font-mono font-medium text-brand-400">
                         {i + 1}
                       </span>
                     </div>
-                    <p className="text-dark-200 text-sm leading-relaxed">
+                    <p className="text-warm-300 text-sm leading-relaxed font-light">
                       {rec}
                     </p>
                   </motion.div>
@@ -527,36 +522,36 @@ export default function AIScanQuiz() {
 
               {/* CTA */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 2 }}
                 className="mt-10 text-center"
               >
                 {submitStatus === "sent" ? (
-                  <div className="p-6 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
-                    <CheckCircle2 className="w-8 h-8 text-emerald-400 mx-auto mb-3" />
-                    <p className="text-white font-semibold mb-1">Verstuurd!</p>
-                    <p className="text-sm text-dark-400">
+                  <div className="p-6 rounded-xl bg-brand-900/15 border border-brand-800/20">
+                    <CheckCircle2 className="w-8 h-8 text-brand-400 mx-auto mb-3" />
+                    <p className="text-warm-100 font-medium mb-1">Verstuurd!</p>
+                    <p className="text-sm text-warm-500 font-light">
                       We nemen zo snel mogelijk contact met u op voor een gratis AI-Scan gesprek.
                     </p>
                   </div>
                 ) : submitStatus === "error" ? (
                   <div className="space-y-4">
-                    <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/30">
-                      <p className="text-sm text-red-300">
+                    <div className="p-4 rounded-xl bg-accent-900/15 border border-accent-800/20">
+                      <p className="text-sm text-accent-300 font-light">
                         Er ging iets mis. Probeer het opnieuw of mail ons direct.
                       </p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
                       <button
                         onClick={handleSubmitForm}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-xl transition-all"
                       >
                         Opnieuw proberen
                       </button>
                       <a
                         href="mailto:melvinthewebdesigner@gmail.com"
-                        className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-600 text-dark-300 hover:text-white rounded-xl transition-all"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-warm-800/20 text-warm-400 hover:text-warm-200 rounded-xl transition-all"
                       >
                         <Mail className="w-4 h-4" />
                         Direct mailen
@@ -568,7 +563,7 @@ export default function AIScanQuiz() {
                     <button
                       onClick={handleSubmitForm}
                       disabled={submitStatus === "sending"}
-                      className="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 disabled:bg-brand-800 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-2xl hover:shadow-brand-500/25 hover:-translate-y-0.5 disabled:hover:translate-y-0 disabled:cursor-wait min-h-[56px]"
+                      className="inline-flex items-center gap-2 px-8 py-4 bg-brand-600 hover:bg-brand-500 disabled:bg-brand-800 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-brand-600/20 hover:-translate-y-0.5 disabled:hover:translate-y-0 disabled:cursor-wait min-h-[56px]"
                     >
                       {submitStatus === "sending" ? (
                         <>
@@ -585,9 +580,8 @@ export default function AIScanQuiz() {
                         </>
                       )}
                     </button>
-                    <p className="text-xs text-dark-500 mt-4">
-                      30 minuten vrijblijvend gesprek + concreet rapport met
-                      aanbevelingen
+                    <p className="text-[11px] font-mono tracking-wider text-warm-700 mt-4">
+                      30 minuten vrijblijvend gesprek + concreet rapport
                     </p>
                   </>
                 )}
@@ -625,7 +619,7 @@ export default function AIScanQuiz() {
 
   return (
     <SectionWrapper id="contact" className="relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/20 to-dark-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/10 to-dark-950" />
 
       <div className="relative">
         {/* Section header */}
@@ -634,15 +628,15 @@ export default function AIScanQuiz() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
-          <span className="inline-block px-4 py-1.5 text-xs font-medium text-brand-400 bg-brand-500/10 border border-brand-500/20 rounded-full mb-4">
+          <span className="inline-block px-3 py-1 text-[11px] font-mono font-medium tracking-[0.15em] uppercase text-brand-400 bg-brand-900/20 border border-brand-800/20 rounded-full mb-5">
             Gratis AI-Scan
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white text-balance">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-800 text-warm-50 text-balance">
             Ontdek uw automatiseringspotentieel
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-dark-400 max-w-2xl mx-auto text-balance px-2">
+          <p className="mt-4 text-base sm:text-lg text-warm-500 max-w-2xl mx-auto text-balance px-2 font-light">
             Beantwoord 6 korte vragen en ontvang direct een persoonlijke
             AI-score met concrete aanbevelingen voor uw bedrijf.
           </p>
@@ -650,13 +644,13 @@ export default function AIScanQuiz() {
 
         {/* Quiz card */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.6 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="p-5 sm:p-8 md:p-10 rounded-2xl bg-dark-900/60 border border-dark-700/50 backdrop-blur-xl shadow-2xl shadow-brand-500/5">
+          <div className="p-5 sm:p-8 md:p-10 rounded-2xl warm-card backdrop-blur-xl shadow-2xl shadow-brand-900/5">
             <ProgressBar step={step} />
 
             <AnimatePresence mode="wait" custom={direction}>
@@ -671,20 +665,19 @@ export default function AIScanQuiz() {
               >
                 {/* Step header */}
                 <div className="flex items-start sm:items-center gap-3 mb-2">
-                  <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center">
+                  <div className="w-10 h-10 flex-shrink-0 rounded-xl bg-brand-900/20 border border-brand-800/20 flex items-center justify-center">
                     <StepIcon className="w-5 h-5 text-brand-400" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">
+                  <h3 className="font-display text-lg sm:text-xl font-700 text-warm-100">
                     {stepTitles[step]}
                   </h3>
                 </div>
-                <p className="text-sm text-dark-400 mb-6 ml-0 sm:ml-[52px]">
+                <p className="text-sm text-warm-500 mb-6 ml-0 sm:ml-[52px] font-light">
                   {stepDescriptions[step]}
                 </p>
 
                 {/* Step content */}
                 <div className="space-y-3">
-                  {/* Step 0: Branche */}
                   {step === 0 &&
                     BRANCHES.map((b) => (
                       <OptionButton
@@ -697,7 +690,6 @@ export default function AIScanQuiz() {
                       />
                     ))}
 
-                  {/* Step 1: Medewerkers */}
                   {step === 1 &&
                     MEDEWERKERS.map((m) => (
                       <OptionButton
@@ -710,7 +702,6 @@ export default function AIScanQuiz() {
                       />
                     ))}
 
-                  {/* Step 2: Admin uren */}
                   {step === 2 &&
                     ADMIN_UREN.map((u) => (
                       <OptionButton
@@ -723,7 +714,6 @@ export default function AIScanQuiz() {
                       />
                     ))}
 
-                  {/* Step 3: Taken (multi-select) */}
                   {step === 3 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {TAKEN.map((t) => (
@@ -737,7 +727,6 @@ export default function AIScanQuiz() {
                     </div>
                   )}
 
-                  {/* Step 4: AI gebruik */}
                   {step === 4 &&
                     AI_GEBRUIK.map((a) => (
                       <OptionButton
@@ -750,11 +739,10 @@ export default function AIScanQuiz() {
                       />
                     ))}
 
-                  {/* Step 5: Contact details */}
                   {step === 5 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-warm-400 mb-2">
                           Naam *
                         </label>
                         <input
@@ -771,20 +759,20 @@ export default function AIScanQuiz() {
                             }));
                           }}
                           placeholder="Uw volledige naam"
-                          className={`w-full px-4 py-3 rounded-xl bg-dark-800/50 border ${
+                          className={`w-full px-4 py-3 rounded-xl bg-dark-800/30 border ${
                             contactErrors.naam
-                              ? "border-red-500/50"
-                              : "border-dark-700"
-                          } text-white placeholder-dark-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all`}
+                              ? "border-accent-600/50"
+                              : "border-warm-800/20"
+                          } text-warm-100 placeholder-warm-700 focus:outline-none focus:border-brand-600/50 focus:ring-1 focus:ring-brand-600/20 transition-all`}
                         />
                         {contactErrors.naam && (
-                          <p className="mt-1 text-xs text-red-400">
+                          <p className="mt-1 text-xs text-accent-400">
                             {contactErrors.naam}
                           </p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-warm-400 mb-2">
                           E-mail *
                         </label>
                         <input
@@ -801,20 +789,20 @@ export default function AIScanQuiz() {
                             }));
                           }}
                           placeholder="uw@email.nl"
-                          className={`w-full px-4 py-3 rounded-xl bg-dark-800/50 border ${
+                          className={`w-full px-4 py-3 rounded-xl bg-dark-800/30 border ${
                             contactErrors.email
-                              ? "border-red-500/50"
-                              : "border-dark-700"
-                          } text-white placeholder-dark-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all`}
+                              ? "border-accent-600/50"
+                              : "border-warm-800/20"
+                          } text-warm-100 placeholder-warm-700 focus:outline-none focus:border-brand-600/50 focus:ring-1 focus:ring-brand-600/20 transition-all`}
                         />
                         {contactErrors.email && (
-                          <p className="mt-1 text-xs text-red-400">
+                          <p className="mt-1 text-xs text-accent-400">
                             {contactErrors.email}
                           </p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-warm-400 mb-2">
                           Bedrijfsnaam
                         </label>
                         <input
@@ -827,11 +815,11 @@ export default function AIScanQuiz() {
                             }))
                           }
                           placeholder="Uw bedrijfsnaam"
-                          className="w-full px-4 py-3 rounded-xl bg-dark-800/50 border border-dark-700 text-white placeholder-dark-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-dark-800/30 border border-warm-800/20 text-warm-100 placeholder-warm-700 focus:outline-none focus:border-brand-600/50 focus:ring-1 focus:ring-brand-600/20 transition-all"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-dark-300 mb-2">
+                        <label className="block text-sm font-medium text-warm-400 mb-2">
                           Telefoon
                         </label>
                         <input
@@ -844,7 +832,7 @@ export default function AIScanQuiz() {
                             }))
                           }
                           placeholder="+31 6 12345678"
-                          className="w-full px-4 py-3 rounded-xl bg-dark-800/50 border border-dark-700 text-white placeholder-dark-500 focus:outline-none focus:border-brand-500/50 focus:ring-1 focus:ring-brand-500/25 transition-all"
+                          className="w-full px-4 py-3 rounded-xl bg-dark-800/30 border border-warm-800/20 text-warm-100 placeholder-warm-700 focus:outline-none focus:border-brand-600/50 focus:ring-1 focus:ring-brand-600/20 transition-all"
                         />
                       </div>
                     </div>
@@ -854,12 +842,12 @@ export default function AIScanQuiz() {
             </AnimatePresence>
 
             {/* Navigation */}
-            <div className="flex items-center justify-between mt-8 pt-6 border-t border-dark-800/50">
+            <div className="flex items-center justify-between mt-8 pt-6 border-t border-warm-800/10">
               <button
                 type="button"
                 onClick={goBack}
                 disabled={step === 0}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-dark-400 hover:text-white disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+                className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-warm-500 hover:text-warm-200 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Vorige
@@ -869,7 +857,7 @@ export default function AIScanQuiz() {
                 type="button"
                 onClick={goNext}
                 disabled={!canProceed()}
-                className="flex items-center gap-2 px-6 py-2.5 bg-brand-600 hover:bg-brand-500 disabled:bg-dark-700 disabled:text-dark-500 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-0.5 disabled:hover:translate-y-0 disabled:hover:shadow-none disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-6 py-2.5 bg-brand-600 hover:bg-brand-500 disabled:bg-dark-700 disabled:text-warm-600 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-600/20 hover:-translate-y-0.5 disabled:hover:translate-y-0 disabled:hover:shadow-none disabled:cursor-not-allowed"
               >
                 {step === 5 ? "Bekijk resultaat" : "Volgende"}
                 <ArrowRight className="w-4 h-4" />

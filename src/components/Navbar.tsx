@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { href: "#pijnpunten", label: "Uitdagingen" },
@@ -26,22 +26,21 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      transition={{ duration: 0.7, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "glass shadow-lg shadow-brand-500/5"
+          ? "glass shadow-lg shadow-black/10"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="relative">
-              <Zap className="w-7 h-7 text-brand-400 group-hover:text-brand-300 transition-colors" />
-              <div className="absolute inset-0 w-7 h-7 bg-brand-400/20 rounded-full blur-lg group-hover:bg-brand-300/30 transition-colors" />
+          <a href="#" className="flex items-center gap-2.5 group">
+            <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center group-hover:bg-brand-500 transition-colors">
+              <span className="text-white font-display font-800 text-sm">M</span>
             </div>
-            <span className="text-lg font-bold text-white">
-              Melvin<span className="text-brand-400">Automations</span>
+            <span className="font-display text-lg font-700 text-warm-50">
+              Melvin<span className="text-brand-400">.</span>
             </span>
           </a>
 
@@ -50,14 +49,14 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="px-4 py-2 text-sm text-dark-300 hover:text-white transition-colors rounded-lg hover:bg-white/5"
+                className="px-4 py-2 text-sm font-light text-warm-400 hover:text-warm-100 transition-colors rounded-lg hover:bg-warm-900/30"
               >
                 {link.label}
               </a>
             ))}
             <a
               href="#contact"
-              className="ml-4 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:shadow-brand-500/25"
+              className="ml-4 px-5 py-2.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-medium rounded-lg transition-all hover:shadow-lg hover:shadow-brand-600/20"
             >
               Gratis AI-Scan
             </a>
@@ -65,7 +64,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-dark-300 hover:text-white transition-colors"
+            className="lg:hidden p-2 text-warm-400 hover:text-warm-100 transition-colors"
             aria-label="Menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -80,15 +79,15 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden glass border-t border-white/5"
+            className="lg:hidden glass border-t border-warm-800/20"
           >
-            <div className="px-4 py-4 space-y-1">
+            <div className="px-5 py-4 space-y-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-dark-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                  className="block px-4 py-3 text-warm-300 hover:text-warm-50 hover:bg-warm-900/30 rounded-lg transition-colors"
                 >
                   {link.label}
                 </a>

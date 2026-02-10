@@ -18,9 +18,9 @@ export default function WhatsAppButton() {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 2, type: "spring", stiffness: 200 }}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.08 }}
       whileTap={{ scale: 0.95 }}
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-2xl shadow-[#25D366]/30 transition-colors"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 sm:w-15 sm:h-15 bg-[#25D366] hover:bg-[#20BD5A] rounded-full flex items-center justify-center shadow-2xl shadow-[#25D366]/25 transition-colors"
     >
       <svg
         className="w-7 h-7 sm:w-8 sm:h-8 text-white"

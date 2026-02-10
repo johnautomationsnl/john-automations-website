@@ -17,10 +17,8 @@ const caseStudies = [
     icon: Home,
     label: "Voorbeeldscenario",
     title: "Makelaarskantoor",
-    color: "text-blue-400",
-    colorBg: "bg-blue-500/10",
-    colorBorder: "border-blue-500/20",
-    gradient: "from-blue-500/10 to-indigo-500/10",
+    color: "text-brand-400",
+    bg: "bg-brand-900/20",
     problem:
       "20 uur per week kwijt aan woningbeschrijvingen, social media en lead-opvolging. Medewerkers besteden meer tijd aan administratie dan aan klantcontact.",
     solution:
@@ -35,10 +33,8 @@ const caseStudies = [
     icon: HardHat,
     label: "Voorbeeldscenario",
     title: "Aannemersbedrijf",
-    color: "text-orange-400",
-    colorBg: "bg-orange-500/10",
-    colorBorder: "border-orange-500/20",
-    gradient: "from-orange-500/10 to-amber-500/10",
+    color: "text-accent-400",
+    bg: "bg-accent-900/20",
     problem:
       "Chaotische projectplanning, gemiste deadlines en klanten die continu bellen voor updates over de voortgang.",
     solution:
@@ -53,10 +49,8 @@ const caseStudies = [
     icon: Calculator,
     label: "Voorbeeldscenario",
     title: "Accountantskantoor",
-    color: "text-emerald-400",
-    colorBg: "bg-emerald-500/10",
-    colorBorder: "border-emerald-500/20",
-    gradient: "from-emerald-500/10 to-teal-500/10",
+    color: "text-brand-300",
+    bg: "bg-brand-900/15",
     problem:
       "30 uur per week aan data-invoer, factuurverwerking en klantcommunicatie. Fouten kosten tijd en geld.",
     solution:
@@ -72,12 +66,12 @@ const caseStudies = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15 },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 25 },
   visible: {
     opacity: 1,
     y: 0,
@@ -99,44 +93,39 @@ export default function CaseStudies() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-50px" }}
-        className="grid grid-cols-1 lg:grid-cols-3 gap-6"
+        className="grid grid-cols-1 lg:grid-cols-3 gap-5"
       >
         {caseStudies.map((cs, i) => (
           <motion.div
             key={i}
             variants={cardVariants}
-            className="group relative rounded-2xl bg-dark-900/50 border border-dark-800 hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-1 overflow-hidden"
+            className="group relative rounded-2xl warm-card hover:-translate-y-0.5 transition-all duration-500 overflow-hidden"
           >
-            {/* Gradient overlay on hover */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-b ${cs.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-            />
-
             <div className="relative p-7">
               {/* Header */}
               <div className="flex items-center gap-3 mb-6">
                 <div
-                  className={`w-12 h-12 rounded-xl ${cs.colorBg} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-11 h-11 rounded-xl ${cs.bg} flex items-center justify-center group-hover:scale-105 transition-transform duration-300`}
                 >
-                  <cs.icon className={`w-6 h-6 ${cs.color}`} />
+                  <cs.icon className={`w-5 h-5 ${cs.color}`} />
                 </div>
                 <div>
-                  <span className="text-xs text-dark-500 font-medium uppercase tracking-wider">
+                  <span className="text-[10px] font-mono tracking-[0.15em] uppercase text-warm-600">
                     {cs.label}
                   </span>
-                  <h3 className="text-lg font-bold text-white">{cs.title}</h3>
+                  <h3 className="font-display text-lg font-700 text-warm-50">{cs.title}</h3>
                 </div>
               </div>
 
               {/* Problem */}
               <div className="mb-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <AlertCircle className="w-4 h-4 text-red-400" />
-                  <span className="text-sm font-semibold text-red-400">
+                  <AlertCircle className="w-3.5 h-3.5 text-accent-500" />
+                  <span className="text-xs font-mono tracking-wider uppercase text-accent-500">
                     Probleem
                   </span>
                 </div>
-                <p className="text-dark-400 text-sm leading-relaxed">
+                <p className="text-warm-500 text-sm leading-relaxed font-light">
                   {cs.problem}
                 </p>
               </div>
@@ -144,12 +133,12 @@ export default function CaseStudies() {
               {/* Solution */}
               <div className="mb-5">
                 <div className="flex items-center gap-2 mb-2">
-                  <Lightbulb className="w-4 h-4 text-amber-400" />
-                  <span className="text-sm font-semibold text-amber-400">
+                  <Lightbulb className="w-3.5 h-3.5 text-accent-400" />
+                  <span className="text-xs font-mono tracking-wider uppercase text-accent-400">
                     Oplossing
                   </span>
                 </div>
-                <p className="text-dark-400 text-sm leading-relaxed">
+                <p className="text-warm-500 text-sm leading-relaxed font-light">
                   {cs.solution}
                 </p>
               </div>
@@ -157,8 +146,8 @@ export default function CaseStudies() {
               {/* Results */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <TrendingUp className="w-4 h-4 text-emerald-400" />
-                  <span className="text-sm font-semibold text-emerald-400">
+                  <TrendingUp className="w-3.5 h-3.5 text-brand-400" />
+                  <span className="text-xs font-mono tracking-wider uppercase text-brand-400">
                     Resultaat
                   </span>
                 </div>
@@ -166,9 +155,9 @@ export default function CaseStudies() {
                   {cs.results.map((result, j) => (
                     <div
                       key={j}
-                      className="flex items-center gap-2 text-sm text-dark-200"
+                      className="flex items-center gap-2.5 text-sm text-warm-300 font-light"
                     >
-                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                      <div className="w-1 h-1 rounded-full bg-brand-400" />
                       {result}
                     </div>
                   ))}
@@ -178,7 +167,7 @@ export default function CaseStudies() {
               {/* CTA */}
               <a
                 href="#contact"
-                className={`mt-6 inline-flex items-center gap-1.5 text-sm font-medium ${cs.color} hover:gap-3 transition-all`}
+                className={`mt-6 inline-flex items-center gap-1.5 text-sm font-medium ${cs.color} hover:gap-2.5 transition-all`}
               >
                 Dit wil ik ook
                 <ArrowRight className="w-4 h-4" />
@@ -194,7 +183,7 @@ export default function CaseStudies() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-center text-xs text-dark-500 mt-8"
+        className="text-center text-xs text-warm-700 mt-8 font-light"
       >
         * Dit zijn voorbeeldscenario&apos;s op basis van realistische situaties.
         Resultaten kunnen variëren per bedrijf.

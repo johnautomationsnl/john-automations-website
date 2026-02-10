@@ -1,33 +1,32 @@
 "use client";
 
-import { Zap, Mail, Linkedin, Instagram } from "lucide-react";
+import { Mail, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-dark-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="relative border-t border-warm-800/10">
+      <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8 py-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#" className="flex items-center gap-2 group mb-4">
-              <div className="relative">
-                <Zap className="w-7 h-7 text-brand-400" />
-                <div className="absolute inset-0 w-7 h-7 bg-brand-400/20 rounded-full blur-lg" />
+            <a href="#" className="flex items-center gap-2.5 group mb-4">
+              <div className="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center">
+                <span className="text-white font-display font-800 text-sm">M</span>
               </div>
-              <span className="text-lg font-bold text-white">
-                Melvin<span className="text-brand-400">Automations</span>
+              <span className="font-display text-lg font-700 text-warm-50">
+                Melvin<span className="text-brand-400">.</span>
               </span>
             </a>
-            <p className="text-dark-400 text-sm leading-relaxed max-w-md mb-6">
+            <p className="text-warm-500 text-sm leading-relaxed max-w-md mb-6 font-light">
               AI-specialist voor het Nederlandse MKB. Wij bouwen op maat
               gemaakte AI-oplossingen en automatiseringen die uw bedrijf
               transformeren.
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5">
               <a
                 href="mailto:melvinthewebdesigner@gmail.com"
                 aria-label="E-mail"
-                className="w-10 h-10 rounded-lg bg-dark-800 hover:bg-brand-500/10 border border-dark-700 hover:border-brand-500/30 flex items-center justify-center text-dark-400 hover:text-brand-400 transition-all"
+                className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -36,7 +35,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-lg bg-dark-800 hover:bg-brand-500/10 border border-dark-700 hover:border-brand-500/30 flex items-center justify-center text-dark-400 hover:text-brand-400 transition-all"
+                className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
@@ -45,7 +44,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-lg bg-dark-800 hover:bg-brand-500/10 border border-dark-700 hover:border-brand-500/30 flex items-center justify-center text-dark-400 hover:text-brand-400 transition-all"
+                className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
               >
                 <Instagram className="w-4 h-4" />
               </a>
@@ -54,7 +53,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
-                className="w-10 h-10 rounded-lg bg-dark-800 hover:bg-brand-500/10 border border-dark-700 hover:border-brand-500/30 flex items-center justify-center text-dark-400 hover:text-brand-400 transition-all"
+                className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
@@ -65,10 +64,10 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">
+            <h3 className="text-[11px] font-mono tracking-[0.15em] uppercase text-warm-400 mb-4">
               Navigatie
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 { href: "#pijnpunten", label: "Uitdagingen" },
                 { href: "#oplossing", label: "Oplossing" },
@@ -79,7 +78,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm text-dark-400 hover:text-brand-400 transition-colors"
+                    className="text-sm text-warm-600 hover:text-brand-400 transition-colors font-light"
                   >
                     {link.label}
                   </a>
@@ -90,17 +89,19 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Contact</h3>
-            <ul className="space-y-3">
+            <h3 className="text-[11px] font-mono tracking-[0.15em] uppercase text-warm-400 mb-4">
+              Contact
+            </h3>
+            <ul className="space-y-2.5">
               <li>
                 <a
                   href="mailto:melvinthewebdesigner@gmail.com"
-                  className="text-sm text-dark-400 hover:text-brand-400 transition-colors"
+                  className="text-sm text-warm-600 hover:text-brand-400 transition-colors font-light"
                 >
                   melvinthewebdesigner@gmail.com
                 </a>
               </li>
-              <li className="text-sm text-dark-400">Nederland</li>
+              <li className="text-sm text-warm-600 font-light">Nederland</li>
               <li>
                 <a
                   href="#contact"
@@ -114,12 +115,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-dark-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-dark-500">
+        <div className="mt-10 pt-8 border-t border-warm-800/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[11px] text-warm-700 font-light">
             &copy; {new Date().getFullYear()} Melvin Automations. Alle rechten
             voorbehouden.
           </p>
-          <p className="text-xs text-dark-600">
+          <p className="text-[11px] text-warm-800 font-mono tracking-wider">
             AI-Specialist &middot; Custom Software &middot; Automatisering
           </p>
         </div>

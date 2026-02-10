@@ -24,10 +24,8 @@ const tabs = [
     id: "makelaars",
     label: "Makelaars",
     icon: Home,
-    color: "text-blue-400",
-    colorBg: "bg-blue-500/10",
-    colorBorder: "border-blue-500/30",
-    colorGradient: "from-blue-500/10 to-indigo-500/10",
+    color: "text-brand-400",
+    bg: "bg-brand-900/20",
     stat: "15 uur/week",
     statLabel: "Een makelaar bespaart gemiddeld 15 uur per week",
     features: [
@@ -61,10 +59,8 @@ const tabs = [
     id: "bouw",
     label: "Bouw & Aannemers",
     icon: HardHat,
-    color: "text-orange-400",
-    colorBg: "bg-orange-500/10",
-    colorBorder: "border-orange-500/30",
-    colorGradient: "from-orange-500/10 to-amber-500/10",
+    color: "text-accent-400",
+    bg: "bg-accent-900/20",
     stat: "10 uur/week",
     statLabel: "Een aannemer bespaart gemiddeld 10 uur per week op administratie",
     features: [
@@ -105,7 +101,7 @@ const tabs = [
 const containerVariants = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.1 },
+    transition: { staggerChildren: 0.08 },
   },
 };
 
@@ -131,16 +127,16 @@ export default function IndustryPages() {
       />
 
       {/* Tabs */}
-      <div className="flex justify-center mb-12">
-        <div className="inline-flex p-1.5 rounded-xl bg-dark-900/50 border border-dark-800">
+      <div className="flex justify-center mb-10">
+        <div className="inline-flex p-1 rounded-xl warm-card">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeTab === tab.id
-                  ? "bg-brand-600 text-white shadow-lg shadow-brand-500/25"
-                  : "text-dark-400 hover:text-white hover:bg-white/5"
+                  ? "bg-brand-600 text-white shadow-lg shadow-brand-600/20"
+                  : "text-warm-500 hover:text-warm-200 hover:bg-warm-900/20"
               }`}
             >
               <tab.icon className="w-4 h-4" />
@@ -154,9 +150,9 @@ export default function IndustryPages() {
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
+          exit={{ opacity: 0, y: -15 }}
           transition={{ duration: 0.3 }}
         >
           {/* Feature cards */}
@@ -164,27 +160,24 @@ export default function IndustryPages() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
           >
             {activeIndustry.features.map((feature, i) => (
               <motion.div
                 key={i}
                 variants={cardVariants}
-                className="group relative p-6 rounded-2xl bg-dark-900/50 border border-dark-800 hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1"
+                className="group relative p-6 rounded-2xl warm-card hover:-translate-y-0.5 transition-all duration-300"
               >
-                <div
-                  className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${activeIndustry.colorGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-                />
                 <div className="relative">
                   <div
-                    className={`w-12 h-12 rounded-xl ${activeIndustry.colorBg} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
+                    className={`w-10 h-10 rounded-xl ${activeIndustry.bg} flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-300`}
                   >
-                    <feature.icon className={`w-6 h-6 ${activeIndustry.color}`} />
+                    <feature.icon className={`w-5 h-5 ${activeIndustry.color}`} />
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3 className="font-display text-base font-700 text-warm-100 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-dark-400 text-sm leading-relaxed">
+                  <p className="text-warm-500 text-sm leading-relaxed font-light">
                     {feature.description}
                   </p>
                 </div>
@@ -194,36 +187,33 @@ export default function IndustryPages() {
 
           {/* Stat banner */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="relative p-6 sm:p-8 rounded-2xl bg-dark-900/50 border border-dark-800 overflow-hidden"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative p-6 sm:p-8 rounded-2xl warm-card overflow-hidden"
           >
-            <div
-              className={`absolute inset-0 bg-gradient-to-r ${activeIndustry.colorGradient} opacity-50`}
-            />
             <div className="relative flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="flex items-center gap-4">
                 <div
-                  className={`w-14 h-14 rounded-2xl ${activeIndustry.colorBg} border ${activeIndustry.colorBorder} flex items-center justify-center`}
+                  className={`w-12 h-12 rounded-2xl ${activeIndustry.bg} flex items-center justify-center`}
                 >
-                  <Clock className={`w-7 h-7 ${activeIndustry.color}`} />
+                  <Clock className={`w-6 h-6 ${activeIndustry.color}`} />
                 </div>
                 <div>
-                  <p className="text-2xl sm:text-3xl font-bold text-white">
+                  <p className="font-display text-2xl sm:text-3xl font-800 text-warm-50">
                     {activeIndustry.stat}
                   </p>
-                  <p className="text-dark-400 text-sm">
+                  <p className="text-warm-500 text-sm font-light">
                     {activeIndustry.statLabel}
                   </p>
                 </div>
               </div>
               <a
                 href="#contact"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-brand-600/20 hover:-translate-y-0.5"
               >
                 Start uw AI-Scan
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
           </motion.div>

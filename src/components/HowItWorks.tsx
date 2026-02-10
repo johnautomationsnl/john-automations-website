@@ -34,7 +34,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <SectionWrapper id="werkwijze" className="relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-950 via-brand-950/20 to-dark-950" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-950/10 to-transparent" />
 
       <div className="relative">
         <SectionHeader
@@ -45,45 +45,42 @@ export default function HowItWorks() {
 
         <div className="relative">
           {/* Connection line (desktop) */}
-          <div className="hidden lg:block absolute top-1/2 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-1/2 left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-brand-800/30 to-transparent -translate-y-1/2" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.2 }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="relative"
               >
-                <div className="group relative p-8 rounded-2xl bg-dark-900/50 border border-dark-800 hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1 text-center">
-                  {/* Glow effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-
+                <div className="group relative p-7 rounded-2xl warm-card hover:-translate-y-0.5 transition-all duration-500 text-center">
                   <div className="relative">
                     {/* Step number */}
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-brand-500/10 border border-brand-500/20 mb-6 group-hover:scale-110 group-hover:bg-brand-500/20 transition-all duration-300">
-                      <span className="text-2xl font-bold gradient-text">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-brand-900/20 border border-brand-800/20 mb-5 group-hover:scale-105 transition-transform duration-300">
+                      <span className="font-mono text-xl font-medium text-brand-400">
                         {step.number}
                       </span>
                     </div>
 
                     {/* Icon */}
                     <div className="flex justify-center mb-4">
-                      <step.icon className="w-6 h-6 text-brand-400" />
+                      <step.icon className="w-5 h-5 text-brand-400/60" />
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-xl font-bold text-white mb-3">
+                    <h3 className="font-display text-xl font-700 text-warm-50 mb-3">
                       {step.title}
                     </h3>
-                    <p className="text-dark-400 text-sm leading-relaxed mb-4">
+                    <p className="text-warm-500 text-sm leading-relaxed mb-4 font-light">
                       {step.description}
                     </p>
 
                     {/* Highlight badge */}
-                    <span className="inline-block px-3 py-1 text-xs font-medium text-brand-300 bg-brand-500/10 rounded-full">
+                    <span className="inline-block px-3 py-1 text-[11px] font-mono tracking-wider uppercase text-brand-400 bg-brand-900/20 rounded-full">
                       {step.highlight}
                     </span>
                   </div>
