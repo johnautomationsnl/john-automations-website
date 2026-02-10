@@ -41,7 +41,7 @@ const tabs = [
         icon: Share2,
         title: "Social media posts",
         description:
-          "Automatische social media posts per nieuw object — altijd zichtbaar op alle kanalen.",
+          "Automatische social media posts per nieuw object. Altijd zichtbaar op alle kanalen.",
       },
       {
         icon: UserCheck,
@@ -53,7 +53,7 @@ const tabs = [
         icon: CalendarCheck,
         title: "Bezichtigingen plannen",
         description:
-          "Klanten plannen zelf bezichtigingen in — geen telefoontjes meer nodig.",
+          "Klanten plannen zelf bezichtigingen in. Geen telefoontjes meer nodig.",
       },
     ],
   },
@@ -72,7 +72,7 @@ const tabs = [
         icon: ClipboardList,
         title: "Projectplanning & materiaallijsten",
         description:
-          "Automatische projectplanning met slimme materiaallijsten — geen spreadsheets meer.",
+          "Automatische projectplanning met slimme materiaallijsten. Geen spreadsheets meer.",
       },
       {
         icon: Bell,
@@ -84,7 +84,7 @@ const tabs = [
         icon: Send,
         title: "Realtime klant-updates",
         description:
-          "Klanten ontvangen automatisch realtime project-updates — geen belletjes meer.",
+          "Klanten ontvangen automatisch realtime project-updates. Geen belletjes meer.",
       },
       {
         icon: Receipt,
@@ -96,7 +96,7 @@ const tabs = [
         icon: GraduationCap,
         title: "AI als digitale mentor",
         description:
-          "AI als digitale mentor voor nieuwe medewerkers — sneller ingewerkt, minder fouten.",
+          "AI als digitale mentor voor nieuwe medewerkers. Sneller ingewerkt, minder fouten.",
       },
     ],
   },

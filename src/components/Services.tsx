@@ -9,7 +9,7 @@ const services = [
     icon: Brain,
     title: "AI Integratie",
     description:
-      "Integreer krachtige AI-modellen in uw bestaande workflows. Van slimme data-analyse tot geautomatiseerde besluitvorming — wij verbinden AI naadloos met uw systemen.",
+      "Integreer krachtige AI-modellen in uw bestaande workflows. Van slimme data-analyse tot geautomatiseerde besluitvorming. Wij verbinden AI naadloos met uw systemen.",
     features: ["Makelaar genereert woningbeschrijving in 30 sec", "Aannemer krijgt automatische materiaallijsten", "Accountant verwerkt 50 facturen per uur"],
     gradient: "from-blue-500/10 to-indigo-500/10",
     iconBg: "bg-blue-500/10",
@@ -19,7 +19,7 @@ const services = [
     icon: Code2,
     title: "Custom Software",
     description:
-      "Op maat gebouwde applicaties die perfect passen bij uw bedrijfsprocessen. Van webapplicaties tot interne tools — altijd gebouwd voor schaalbaarheid.",
+      "Op maat gebouwde applicaties die perfect passen bij uw bedrijfsprocessen. Van webapplicaties tot interne tools, altijd gebouwd voor schaalbaarheid.",
     features: ["Klantportaal met realtime projectstatus", "Dashboard met live bedrijfsoverzicht", "Koppeling tussen uw boekhoudsoftware en CRM"],
     gradient: "from-emerald-500/10 to-teal-500/10",
     iconBg: "bg-emerald-500/10",
@@ -29,7 +29,7 @@ const services = [
     icon: Workflow,
     title: "Proces Automatisering",
     description:
-      "Automatiseer repetitieve bedrijfsprocessen en bespaar uren per week. Van facturatie tot lead-opvolging — laat technologie het zware werk doen.",
+      "Automatiseer repetitieve bedrijfsprocessen en bespaar uren per week. Van facturatie tot lead-opvolging. Laat technologie het zware werk doen.",
     features: ["Offerte binnen 2 minuten verstuurd", "Leads automatisch opgevolgd na 24 uur", "Klantgegevens direct in uw systeem"],
     gradient: "from-purple-500/10 to-violet-500/10",
     iconBg: "bg-purple-500/10",
@@ -69,7 +69,7 @@ export default function Services() {
       <SectionHeader
         badge="Diensten"
         title="Wat wij voor u bouwen"
-        description="Van strategie tot implementatie — complete AI-oplossingen op maat voor uw MKB-bedrijf."
+        description="Van strategie tot implementatie. Complete AI-oplossingen op maat voor uw MKB-bedrijf."
       />
 
       <motion.div

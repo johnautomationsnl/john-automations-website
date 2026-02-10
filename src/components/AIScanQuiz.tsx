@@ -110,23 +110,23 @@ function calculateScore(answers: QuizAnswers): number {
 
 const TASK_RECOMMENDATIONS: Record<string, string> = {
   Klantcommunicatie:
-    "AI-chatbot voor 24/7 klantcommunicatie — bespaar tot 10 uur per week op e-mails en berichten.",
+    "AI-chatbot voor 24/7 klantcommunicatie. Bespaar tot 10 uur per week op e-mails en berichten.",
   Offertes:
-    "Geautomatiseerde offerte-generator — van aanvraag naar professionele offerte in minuten.",
+    "Geautomatiseerde offerte-generator. Van aanvraag naar professionele offerte in minuten.",
   Planning:
-    "Slimme planning-assistent — automatisch roosteren, afspraken inplannen en herinneringen versturen.",
+    "Slimme planning-assistent. Automatisch roosteren, afspraken inplannen en herinneringen versturen.",
   Facturatie:
-    "Automatische facturatie-flow — facturen aanmaken, versturen en opvolgen zonder handwerk.",
+    "Automatische facturatie-flow. Facturen aanmaken, versturen en opvolgen zonder handwerk.",
   Klantenwerving:
-    "AI-gestuurde leadgeneratie — automatisch nieuwe klanten identificeren en bereiken.",
+    "AI-gestuurde leadgeneratie. Automatisch nieuwe klanten identificeren en bereiken.",
   "Data invoer":
-    "Intelligente data-extractie — documenten en formulieren automatisch verwerken en invoeren.",
+    "Intelligente data-extractie. Documenten en formulieren automatisch verwerken en invoeren.",
 };
 
 const GENERIC_RECOMMENDATIONS = [
-  "Workflow-automatisering op maat — verbind uw bestaande tools en elimineer handmatige tussenstappen.",
-  "AI-dashboard met real-time inzichten — krijg direct overzicht van uw belangrijkste bedrijfsdata.",
-  "Slimme e-mailautomatisering — automatisch opvolgen, categoriseren en beantwoorden van berichten.",
+  "Workflow-automatisering op maat. Verbind uw bestaande tools en elimineer handmatige tussenstappen.",
+  "AI-dashboard met real-time inzichten. Krijg direct overzicht van uw belangrijkste bedrijfsdata.",
+  "Slimme e-mailautomatisering. Automatisch opvolgen, categoriseren en beantwoorden van berichten.",
 ];
 
 function getRecommendations(answers: QuizAnswers): string[] {
@@ -434,7 +434,7 @@ export default function AIScanQuiz() {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          _subject: `🤖 AI-Scan aanvraag — ${answers.bedrijf || answers.naam} (Score: ${score}%)`,
+          _subject: `🤖 AI-Scan aanvraag ${answers.bedrijf || answers.naam} (Score: ${score}%)`,
           Naam: answers.naam,
           Email: answers.email,
           Bedrijf: answers.bedrijf || "Niet ingevuld",

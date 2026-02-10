@@ -58,12 +58,12 @@ export default function About() {
                 Wat mij drijft? Ik zie dagelijks ondernemers die{" "}
                 <span className="text-white">uren verspillen</span> aan taken die een computer
                 in seconden kan doen. Van het handmatig opvolgen van leads tot het overtypen van
-                gegevens — het kan allemaal slimmer. En dat is precies wat ik bouw.
+                gegevens. Het kan allemaal slimmer. En dat is precies wat ik bouw.
               </p>
               <p className="text-base sm:text-lg">
                 Geen standaard pakketten, geen one-size-fits-all. Elke oplossing wordt{" "}
                 <span className="text-brand-400">specifiek voor uw bedrijf</span> ontwikkeld.
-                En het mooiste? U hoeft er zelf niets van te begrijpen — dat is mijn werk.
+                En het mooiste? U hoeft er zelf niets van te begrijpen. Dat is mijn werk.
               </p>
             </div>
 
