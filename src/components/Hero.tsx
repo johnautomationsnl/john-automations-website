@@ -2,12 +2,24 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Particles } from "./magicui/particles";
+import { ShimmerButton } from "./magicui/shimmer-button";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden noise-overlay">
       {/* Warm gradient background */}
       <div className="absolute inset-0 warm-gradient-bg" />
+
+      {/* Particles background */}
+      <Particles
+        className="absolute inset-0"
+        quantity={80}
+        color="#2d8a6e"
+        size={0.6}
+        staticity={40}
+        ease={60}
+      />
 
       {/* Subtle organic shapes */}
       <div className="absolute top-1/3 left-1/5 w-[500px] h-[500px] bg-brand-600/[0.04] rounded-full blur-[150px] animate-float" />
@@ -67,12 +79,19 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2.5 px-7 py-4 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-brand-600/20 hover:-translate-y-0.5"
-            >
-              Gratis AI-Scan Aanvragen
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <a href="#contact">
+              <ShimmerButton
+                shimmerColor="#4ade80"
+                background="rgba(26, 107, 82, 0.9)"
+                borderRadius="12px"
+                shimmerSize="0.05em"
+                className="px-7 py-4 text-base font-medium shadow-xl shadow-brand-600/20"
+              >
+                <span className="flex items-center gap-2.5">
+                  Gratis AI-Scan Aanvragen
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </span>
+              </ShimmerButton>
             </a>
             <a
               href="#diensten"

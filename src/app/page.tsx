@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import TechStack from "@/components/TechStack";
+import StatsBar from "@/components/StatsBar";
 import PainPoints from "@/components/PainPoints";
 import Solution from "@/components/Solution";
 import SubsidyBanner from "@/components/SubsidyBanner";
@@ -19,6 +21,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TechStack />
+        <StatsBar />
         <PainPoints />
         <Solution />
         <SubsidyBanner />

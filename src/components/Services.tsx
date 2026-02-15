@@ -1,63 +1,52 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Brain, Code2, Workflow, MessageSquareText, ArrowRight } from "lucide-react";
+import { Brain, Code2, Workflow, MessageSquareText } from "lucide-react";
 import SectionWrapper, { SectionHeader } from "./SectionWrapper";
+import { BentoGrid, BentoCard } from "./magicui/bento-grid";
 
 const services = [
   {
     icon: Brain,
     title: "AI Integratie",
     description:
-      "Integreer krachtige AI-modellen in uw bestaande workflows. Van slimme data-analyse tot geautomatiseerde besluitvorming. Wij verbinden AI naadloos met uw systemen.",
-    features: ["Makelaar genereert woningbeschrijving in 30 sec", "Aannemer krijgt automatische materiaallijsten", "Accountant verwerkt 50 facturen per uur"],
+      "Integreer krachtige AI-modellen in uw bestaande workflows. Van slimme data-analyse tot geautomatiseerde besluitvorming.",
+    features: ["Woningbeschrijving in 30 sec", "Automatische materiaallijsten", "50 facturen per uur verwerkt"],
     color: "text-brand-400",
     bg: "bg-brand-900/20",
+    gridClass: "md:col-span-2 md:row-span-1",
   },
   {
     icon: Code2,
     title: "Custom Software",
     description:
-      "Op maat gebouwde applicaties die perfect passen bij uw bedrijfsprocessen. Van webapplicaties tot interne tools, altijd gebouwd voor schaalbaarheid.",
-    features: ["Klantportaal met realtime projectstatus", "Dashboard met live bedrijfsoverzicht", "Koppeling tussen uw boekhoudsoftware en CRM"],
+      "Op maat gebouwde applicaties die perfect passen bij uw bedrijfsprocessen. Van webapplicaties tot interne tools.",
+    features: ["Klantportaal met realtime status", "Live bedrijfsoverzicht", "Boekhouding-CRM koppeling"],
     color: "text-accent-400",
     bg: "bg-accent-900/20",
+    gridClass: "md:col-span-1 md:row-span-1",
   },
   {
     icon: Workflow,
     title: "Proces Automatisering",
     description:
-      "Automatiseer repetitieve bedrijfsprocessen en bespaar uren per week. Van facturatie tot lead-opvolging. Laat technologie het zware werk doen.",
-    features: ["Offerte binnen 2 minuten verstuurd", "Leads automatisch opgevolgd na 24 uur", "Klantgegevens direct in uw systeem"],
+      "Automatiseer repetitieve bedrijfsprocessen en bespaar uren per week. Van facturatie tot lead-opvolging.",
+    features: ["Offerte in 2 minuten", "Leads auto-opgevolgd", "Klantgegevens direct in systeem"],
     color: "text-brand-300",
     bg: "bg-brand-900/15",
+    gridClass: "md:col-span-1 md:row-span-1",
   },
   {
     icon: MessageSquareText,
     title: "AI Chatbots",
     description:
-      "Intelligente chatbots die 24/7 uw klanten helpen, leads kwalificeren en afspraken inplannen. Getraind op uw bedrijfsinformatie voor relevante antwoorden.",
-    features: ["Klant krijgt om 3 uur 's nachts antwoord", "Bot plant bezichtiging zonder tussenkomst", "Afspraak staat direct in uw agenda"],
+      "Intelligente chatbots die 24/7 uw klanten helpen, leads kwalificeren en afspraken inplannen.",
+    features: ["Antwoord om 3 uur 's nachts", "Bot plant bezichtiging", "Afspraak direct in agenda"],
     color: "text-accent-300",
     bg: "bg-accent-900/15",
+    gridClass: "md:col-span-2 md:row-span-1",
   },
 ];
-
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 25 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" as const },
-  },
-};
 
 export default function Services() {
   return (
@@ -69,34 +58,24 @@ export default function Services() {
       />
 
       <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        className="grid grid-cols-1 md:grid-cols-2 gap-5"
+        transition={{ duration: 0.6 }}
       >
-        {services.map((service, i) => (
-          <motion.div
-            key={i}
-            variants={cardVariants}
-            className="group relative p-7 rounded-2xl warm-card hover:-translate-y-0.5 transition-all duration-500"
-          >
-            <div className="relative">
-              {/* Icon */}
-              <div
-                className={`w-12 h-12 rounded-xl ${service.bg} flex items-center justify-center mb-5 group-hover:scale-105 transition-transform duration-300`}
-              >
-                <service.icon className={`w-6 h-6 ${service.color}`} />
-              </div>
-
-              {/* Title and description */}
-              <h3 className="font-display text-xl font-700 text-warm-50 mb-3">{service.title}</h3>
-              <p className="text-warm-500 text-sm leading-relaxed mb-5 font-light">
-                {service.description}
-              </p>
-
-              {/* Features */}
-              <div className="space-y-2 mb-5">
+        <BentoGrid className="auto-rows-[20rem]">
+          {services.map((service, i) => (
+            <BentoCard
+              key={i}
+              name={service.title}
+              description={service.description}
+              Icon={service.icon}
+              iconClassName={service.color}
+              href="#contact"
+              cta="AI-Scan starten"
+              className={service.gridClass}
+            >
+              <div className="space-y-1.5">
                 {service.features.map((feature, j) => (
                   <div key={j} className="flex items-center gap-2.5 text-sm text-warm-400 font-light">
                     <div className={`w-1 h-1 rounded-full ${service.color.replace("text-", "bg-")}`} />
@@ -104,18 +83,9 @@ export default function Services() {
                   </div>
                 ))}
               </div>
-
-              {/* CTA */}
-              <a
-                href="#contact"
-                className={`inline-flex items-center gap-1.5 text-sm font-medium ${service.color} hover:gap-2.5 transition-all`}
-              >
-                AI-Scan starten
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </motion.div>
-        ))}
+            </BentoCard>
+          ))}
+        </BentoGrid>
       </motion.div>
     </SectionWrapper>
   );
