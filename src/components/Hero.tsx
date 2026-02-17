@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Particles } from "./magicui/particles";
 import { ShimmerButton } from "./magicui/shimmer-button";
+import SplineScene from "./SplineScene";
 
 export default function Hero() {
   return (
@@ -11,9 +12,21 @@ export default function Hero() {
       {/* Warm gradient background */}
       <div className="absolute inset-0 warm-gradient-bg" />
 
+      {/* Spline 3D Scene */}
+      <div className="absolute inset-0 w-full h-full hidden sm:block">
+        <SplineScene />
+      </div>
+      <div className="absolute inset-0 block sm:hidden scale-75 origin-center">
+        <SplineScene />
+      </div>
+
+      {/* Gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-950/70 via-dark-950/50 to-dark-950/80 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-dark-950/60 via-transparent to-dark-950/60 z-[1]" />
+
       {/* Particles background */}
       <Particles
-        className="absolute inset-0"
+        className="absolute inset-0 z-[2]"
         quantity={80}
         color="#2d8a6e"
         size={0.6}
