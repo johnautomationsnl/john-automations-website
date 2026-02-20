@@ -122,6 +122,13 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-4">
             <a
+              href="/werkwijze"
+              className="text-[11px] text-warm-600 hover:text-brand-400 transition-colors font-light"
+            >
+              Werkwijze
+            </a>
+            <span className="text-warm-800">&middot;</span>
+            <a
               href="/voorwaarden"
               className="text-[11px] text-warm-600 hover:text-brand-400 transition-colors font-light"
             >
