@@ -122,9 +122,24 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Melvin Automations. Alle rechten
             voorbehouden.
           </p>
-          <p className="text-[11px] text-warm-800 font-mono tracking-wider">
-            AI-Specialist &middot; Custom Software &middot; Automatisering
-          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="/werkwijze"
+              className="text-[11px] text-warm-600 hover:text-brand-400 transition-colors font-light"
+            >
+              Werkwijze
+            </a>
+            <span className="text-warm-800">&middot;</span>
+            <a
+              href="/voorwaarden"
+              className="text-[11px] text-warm-600 hover:text-brand-400 transition-colors font-light"
+            >
+              Algemene Voorwaarden
+            </a>
+            <p className="text-[11px] text-warm-800 font-mono tracking-wider">
+              AI-Specialist &middot; Custom Software &middot; Automatisering
+            </p>
+          </div>
         </div>
       </div>
     </footer>
