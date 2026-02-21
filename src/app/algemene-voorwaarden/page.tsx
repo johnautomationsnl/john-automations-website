@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Algemene Voorwaarden | John Automations",
-  description: "Algemene voorwaarden voor consumenten en zakelijke klanten van John Automations",
+  title: "Algemene Voorwaarden | Melvin Automations",
+  description: "Algemene voorwaarden voor consumenten en zakelijke klanten van Melvin Automations",
 };
 
 export default function AlgemeneVoorwaarden() {

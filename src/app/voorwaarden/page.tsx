@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Algemene Voorwaarden | John Automations",
+  title: "Algemene Voorwaarden | Melvin Automations",
   description:
-    "Algemene voorwaarden van John Automations voor AI-medewerker dienstverlening — geldig voor zowel consumenten als zakelijke klanten.",
+    "Algemene voorwaarden van Melvin Automations voor AI-medewerker dienstverlening — geldig voor zowel consumenten als zakelijke klanten.",
 };
 
 export default function Voorwaarden() {
@@ -30,9 +30,9 @@ export default function Voorwaarden() {
         <h1 className="text-3xl md:text-4xl font-bold mb-2 font-bricolage">
           Algemene Voorwaarden
         </h1>
-        <p className="text-warm-400 mb-4 text-lg">John Automations</p>
+        <p className="text-warm-400 mb-4 text-lg">Melvin Automations</p>
         <p className="text-warm-500 text-sm mb-12 leading-relaxed">
-          Deze voorwaarden zijn van toepassing op alle klanten van John Automations, 
+          Deze voorwaarden zijn van toepassing op alle klanten van Melvin Automations, 
           zowel <strong className="text-warm-300">consumenten</strong> (particulieren) als{" "}
           <strong className="text-warm-300">zakelijke klanten (B2B)</strong>. Waar van toepassing 
           gelden voor consumenten aanvullende wettelijke rechten op grond van het Nederlands consumentenrecht.
@@ -47,11 +47,11 @@ export default function Voorwaarden() {
             <p>
               <strong>1.1</strong> <strong>Opdrachtnemer</strong>: John
               Automations, gevestigd te Parkstad, Zuid-Limburg, hierna
-              &ldquo;John Automations&rdquo;.
+              &ldquo;Melvin Automations&rdquo;.
             </p>
             <p>
               <strong>1.2</strong> <strong>Klant</strong>: de natuurlijke persoon 
-              of rechtspersoon die een overeenkomst aangaat met John Automations.
+              of rechtspersoon die een overeenkomst aangaat met Melvin Automations.
             </p>
             <p>
               <strong>1.3</strong> <strong>Consument</strong>: een klant die een 
@@ -70,7 +70,7 @@ export default function Voorwaarden() {
             </p>
             <p>
               <strong>1.6</strong> <strong>AI-medewerker</strong>: de door
-              John Automations geconfigureerde digitale assistent die namens
+              Melvin Automations geconfigureerde digitale assistent die namens
               Klant communiceert.
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function Voorwaarden() {
             <p>
               <strong>2.1</strong> Deze algemene voorwaarden zijn van toepassing
               op alle aanbiedingen, offertes, overeenkomsten en diensten van
-              John Automations.
+              Melvin Automations.
             </p>
             <p>
               <strong>2.2</strong> Voorafgaand aan het sluiten van de
@@ -123,7 +123,7 @@ export default function Voorwaarden() {
               WhatsApp) accepteert.
             </p>
             <p>
-              <strong>3.3</strong> John Automations behoudt zich het recht voor een
+              <strong>3.3</strong> Melvin Automations behoudt zich het recht voor een
               opdracht zonder opgaaf van reden te weigeren.
             </p>
           </div>
@@ -166,7 +166,7 @@ export default function Voorwaarden() {
           </h2>
           <div className="space-y-3 text-warm-200 leading-relaxed">
             <p>
-              <strong>5.1</strong> John Automations zal de Dienst naar beste inzicht en
+              <strong>5.1</strong> Melvin Automations zal de Dienst naar beste inzicht en
               vermogen uitvoeren, conform de eisen van goed vakmanschap. De
               verplichting betreft een{" "}
               <strong>inspanningsverplichting</strong> en uitdrukkelijk geen
@@ -175,7 +175,7 @@ export default function Voorwaarden() {
             <p>
               <strong>5.2</strong> De AI-medewerker is een geautomatiseerd
               systeem dat op basis van kunstmatige intelligentie antwoorden
-              genereert. John Automations garandeert <strong>niet</strong> dat de door de
+              genereert. Melvin Automations garandeert <strong>niet</strong> dat de door de
               AI-medewerker gegeven antwoorden altijd volledig, correct of
               foutloos zijn.
             </p>
@@ -186,9 +186,9 @@ export default function Voorwaarden() {
               van de AI-medewerker te monitoren.
             </p>
             <p>
-              <strong>5.4</strong> John Automations is afhankelijk van diensten van
+              <strong>5.4</strong> Melvin Automations is afhankelijk van diensten van
               derden (waaronder WhatsApp/Meta, AI-modelproviders zoals OpenAI en
-              Anthropic, en cloud-infrastructuur). John Automations heeft geen invloed op
+              Anthropic, en cloud-infrastructuur). Melvin Automations heeft geen invloed op
               de beschikbaarheid of het beleid van deze diensten en is niet 
               aansprakelijk voor storingen of wijzigingen door derden.
             </p>
@@ -226,14 +226,14 @@ export default function Voorwaarden() {
           </h2>
           <div className="space-y-3 text-warm-200 leading-relaxed">
             <p>
-              <strong>7.1</strong> John Automations is <strong>uitsluitend</strong>{" "}
+              <strong>7.1</strong> Melvin Automations is <strong>uitsluitend</strong>{" "}
               aansprakelijk voor directe schade die het rechtstreekse gevolg is
-              van een aantoonbare toerekenbare tekortkoming, mits Klant John Automations 
+              van een aantoonbare toerekenbare tekortkoming, mits Klant Melvin Automations 
               schriftelijk in gebreke heeft gesteld met een redelijke termijn van ten minste 
-              14 dagen, en John Automations ook na die termijn tekortschiet.
+              14 dagen, en Melvin Automations ook na die termijn tekortschiet.
             </p>
             <p>
-              <strong>7.2</strong> De totale aansprakelijkheid van John Automations richting 
+              <strong>7.2</strong> De totale aansprakelijkheid van Melvin Automations richting 
               zakelijke klanten is te allen tijde beperkt tot{" "}
               <strong>het bedrag dat in de drie (3) maanden voorafgaand aan het
               schadeveroorzakende feit is betaald</strong>, met een maximum van €1.000.
@@ -244,7 +244,7 @@ export default function Voorwaarden() {
               gelden niet voor consumenten voor zover de wet dit niet toestaat.
             </p>
             <p>
-              <strong>7.4</strong> John Automations is <strong>nooit</strong>{" "}
+              <strong>7.4</strong> Melvin Automations is <strong>nooit</strong>{" "}
               aansprakelijk voor indirecte schade, gevolgschade, gederfde winst of 
               reputatieschade.
             </p>
@@ -263,7 +263,7 @@ export default function Voorwaarden() {
               anders vermeld.
             </p>
             <p>
-              <strong>8.2</strong> John Automations hanteert een eenmalige
+              <strong>8.2</strong> Melvin Automations hanteert een eenmalige
               setup-vergoeding en een maandelijkse abonnementsvergoeding, zoals
               vastgelegd in de offerte.
             </p>
@@ -273,7 +273,7 @@ export default function Voorwaarden() {
             </p>
             <p>
               <strong>8.4</strong> Bij niet-tijdige betaling is Klant in verzuim. 
-              Voor zakelijke klanten is John Automations gerechtigd de wettelijke 
+              Voor zakelijke klanten is Melvin Automations gerechtigd de wettelijke 
               handelsrente in rekening te brengen. Voor consumenten geldt de wettelijke rente.
             </p>
           </div>
@@ -301,7 +301,7 @@ export default function Voorwaarden() {
               consument is en recht heeft op herroeping conform artikel 4.
             </p>
             <p>
-              <strong>9.4</strong> John Automations is gerechtigd de overeenkomst met
+              <strong>9.4</strong> Melvin Automations is gerechtigd de overeenkomst met
               onmiddellijke ingang te ontbinden indien Klant in verzuim is met 
               betaling of in strijd handelt met deze voorwaarden.
             </p>
@@ -316,8 +316,8 @@ export default function Voorwaarden() {
           <div className="space-y-3 text-warm-200 leading-relaxed">
             <p>
               <strong>10.1</strong> Alle intellectuele eigendomsrechten op de door
-              John Automations ontwikkelde software, configuraties, templates en
-              documentatie berusten bij John Automations.
+              Melvin Automations ontwikkelde software, configuraties, templates en
+              documentatie berusten bij Melvin Automations.
             </p>
             <p>
               <strong>10.2</strong> Klant verkrijgt een niet-exclusief,
@@ -356,17 +356,17 @@ export default function Voorwaarden() {
           </h2>
           <div className="space-y-3 text-warm-200 leading-relaxed">
             <p>
-              <strong>12.1</strong> John Automations verwerkt persoonsgegevens in
+              <strong>12.1</strong> Melvin Automations verwerkt persoonsgegevens in
               overeenstemming met de AVG.
             </p>
             <p>
-              <strong>12.2</strong> Voor zover John Automations bij de uitvoering van de
+              <strong>12.2</strong> Voor zover Melvin Automations bij de uitvoering van de
               Dienst persoonsgegevens verwerkt namens een zakelijke klant, treedt
-              John Automations op als verwerker in de zin van de AVG. Partijen zullen 
+              Melvin Automations op als verwerker in de zin van de AVG. Partijen zullen 
               in dat geval een verwerkersovereenkomst sluiten conform art. 28 AVG.
             </p>
             <p>
-              <strong>12.3</strong> John Automations slaat gegevens op binnen de
+              <strong>12.3</strong> Melvin Automations slaat gegevens op binnen de
               Europese Economische Ruimte (EER), tenzij anders overeengekomen.
               Bij gebruik van AI-modelproviders buiten de EER (zoals OpenAI of
               Anthropic) kan gegevensverwerking buiten de EER plaatsvinden.
@@ -382,7 +382,7 @@ export default function Voorwaarden() {
           </h2>
           <div className="space-y-3 text-warm-200 leading-relaxed">
             <p>
-              <strong>13.1</strong> John Automations is niet gehouden tot nakoming van
+              <strong>13.1</strong> Melvin Automations is niet gehouden tot nakoming van
               enige verplichting indien zij daartoe verhinderd is als gevolg van
               overmacht, waaronder storingen bij derden, internetuitval, stroomuitval,
               overheidsmaatregelen en pandemieën.
@@ -403,7 +403,7 @@ export default function Voorwaarden() {
           </h2>
           <div className="space-y-3 text-warm-200 leading-relaxed">
             <p>
-              <strong>14.1</strong> John Automations behoudt zich het recht voor deze
+              <strong>14.1</strong> Melvin Automations behoudt zich het recht voor deze
               algemene voorwaarden te wijzigen. Gewijzigde voorwaarden treden in
               werking 30 dagen na bekendmaking aan Klant.
             </p>
@@ -448,12 +448,12 @@ export default function Voorwaarden() {
         {/* Footer */}
         <div className="border-t border-white/10 pt-8 mt-12">
           <p className="text-warm-400 text-sm leading-relaxed">
-            <strong>John Automations</strong> — Parkstad, Zuid-Limburg
+            <strong>Melvin Automations</strong> — Parkstad, Zuid-Limburg
           </p>
           <p className="text-warm-400 text-sm mt-1">
             E-mail:{" "}
-            <a href="mailto:john.automations.nl@gmail.com" className="text-brand hover:underline">
-              john.automations.nl@gmail.com
+            <a href="mailto:melvinthewebdesigner@gmail.com" className="text-brand hover:underline">
+              melvinthewebdesigner@gmail.com
             </a>
           </p>
           <p className="text-warm-500 text-sm mt-4 italic">
