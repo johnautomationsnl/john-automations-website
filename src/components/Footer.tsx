@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Linkedin, Instagram } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -38,26 +38,6 @@ export default function Footer() {
                 className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
-              <a
-                href="https://www.instagram.com/melvin.automations"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://x.com/AutomationsJohn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-                className="w-9 h-9 rounded-lg bg-dark-800/40 hover:bg-brand-900/30 border border-warm-800/10 hover:border-brand-800/20 flex items-center justify-center text-warm-500 hover:text-brand-400 transition-all"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
               </a>
             </div>
           </div>
