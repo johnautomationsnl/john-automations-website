@@ -6,6 +6,7 @@ import PainPoints from "@/components/PainPoints";
 import Solution from "@/components/Solution";
 import SubsidyBanner from "@/components/SubsidyBanner";
 import Services from "@/components/Services";
+import WhatsAppAssistant from "@/components/WhatsAppAssistant";
 import IndustryPages from "@/components/IndustryPages";
 import HowItWorks from "@/components/HowItWorks";
 import CaseStudies from "@/components/CaseStudies";
@@ -27,6 +28,7 @@ export default function Home() {
         <Solution />
         <SubsidyBanner />
         <Services />
+        <WhatsAppAssistant />
         <IndustryPages />
         <HowItWorks />
         <CaseStudies />
