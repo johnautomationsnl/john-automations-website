@@ -41,7 +41,7 @@ export default function AlgemeneVoorwaarden() {
               1. Algemeen
             </h2>
             <p className="mb-4">
-              Deze algemene voorwaarden zijn van toepassing op alle overeenkomsten tussen Melvin Automations (hierna: "wij", "ons") en de consument (hierna: "u") voor de levering van AI-diensten, softwareontwikkeling en automatisering.
+              Deze algemene voorwaarden zijn van toepassing op alle overeenkomsten tussen Melvin Automations (hierna: &ldquo;wij&rdquo;, &ldquo;ons&rdquo;) en de consument (hierna: &ldquo;u&rdquo;) voor de levering van AI-diensten, softwareontwikkeling en automatisering.
             </p>
             <p>
               Melvin Automations is gevestigd te Zuid-Limburg, Nederland en ingeschreven bij de Kamer van Koophandel onder nummer [KVK-nummer]. Onze diensten richt zich uitsluitend aan ondernemingen in Nederland.
@@ -84,7 +84,7 @@ export default function AlgemeneVoorwaarden() {
               4. Prijzen en Betaling
             </h2>
             <p className="mb-4">
-              Alle prijzen zijn in euro's en inclusief BTW, tenzij anders vermeld. Wij behouden ons het recht voor om prijzen te wijzigen, mits wij u vooraf informeren.
+              Alle prijzen zijn in euro&apos;s en inclusief BTW, tenzij anders vermeld. Wij behouden ons het recht voor om prijzen te wijzigen, mits wij u vooraf informeren.
             </p>
             <p className="mb-4">
               Betalingstermijn: 14 dagen na factuurdatum, tenzij anders overeengekomen. Bij niet-tijdige betaling zijn wij gerechtigd om de levering op te schorten.
