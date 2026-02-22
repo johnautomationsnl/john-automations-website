@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Zap, FileCheck, TrendingUp, ArrowRight } from "lucide-react";
-import SectionWrapper, { SectionHeader } from "./SectionWrapper";
+import SectionWrapper from "./SectionWrapper";
 
 const examples = [
   {
@@ -77,7 +77,7 @@ export default function AIEmployee() {
             <span className="text-brand-400">Zie het als je beste medewerker.</span>
           </h2>
           <p className="text-warm-400 text-base sm:text-lg leading-relaxed font-light">
-            De meeste ondernemers horen "AI" en denken aan een domme pop-up op een website. Fout.
+            De meeste ondernemers horen &ldquo;AI&rdquo; en denken aan een domme pop-up op een website. Fout.
             Een AI-medewerker zit diep in je systemen en werkt 24/7 — zonder pauze, zonder fouten,
             zonder salaris.
           </p>
