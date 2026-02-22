@@ -111,9 +111,9 @@ const TASK_RECOMMENDATIONS: Record<string, string> = {
   Klantcommunicatie:
     "AI-chatbot voor 24/7 klantcommunicatie. Bespaar tot 10 uur per week op e-mails en berichten.",
   Offertes:
-    "Geautomatiseerde offerte-generator. Van aanvraag naar professionele offerte in minuten.",
+    "Geautomatiseerde offertegenerator. Van aanvraag naar professionele offerte in minuten.",
   Planning:
-    "Slimme planning-assistent. Automatisch roosteren, afspraken inplannen en herinneringen versturen.",
+    "Slimme planningsassistent. Automatisch roosteren, afspraken inplannen en herinneringen versturen.",
   Facturatie:
     "Automatische facturatie-flow. Facturen aanmaken, versturen en opvolgen zonder handwerk.",
   Klantenwerving:
@@ -123,8 +123,8 @@ const TASK_RECOMMENDATIONS: Record<string, string> = {
 };
 
 const GENERIC_RECOMMENDATIONS = [
-  "Workflow-automatisering op maat. Verbind uw bestaande tools en elimineer handmatige tussenstappen.",
-  "AI-dashboard met real-time inzichten. Krijg direct overzicht van uw belangrijkste bedrijfsdata.",
+  "Workflow-automatisering op maat. Verbind je bestaande tools en elimineer handmatige tussenstappen.",
+  "AI-dashboard met real-time inzichten. Krijg direct overzicht van je belangrijkste bedrijfsdata.",
   "Slimme e-mailautomatisering. Automatisch opvolgen, categoriseren en beantwoorden van berichten.",
 ];
 
@@ -481,13 +481,13 @@ export default function AIScanQuiz() {
                   className="inline-flex items-center gap-2 px-3 py-1 text-[10px] font-mono tracking-[0.15em] uppercase text-brand-400 bg-brand-900/20 border border-brand-800/20 rounded-full mb-5"
                 >
                   <Sparkles className="w-3 h-3" />
-                  Uw AI-Scan Resultaat
+                  Jouw AI-Scan Resultaat
                 </motion.div>
                 <h2 className="font-display text-xl sm:text-2xl md:text-3xl font-800 text-warm-50 mb-2">
                   Automatiseringspotentieel
                 </h2>
                 <p className="text-sm sm:text-base text-warm-500 font-light">
-                  Op basis van uw antwoorden zien we volop kansen
+                  Op basis van jouw antwoorden zien we volop kansen
                 </p>
               </div>
 
@@ -532,7 +532,7 @@ export default function AIScanQuiz() {
                     <CheckCircle2 className="w-8 h-8 text-brand-400 mx-auto mb-3" />
                     <p className="text-warm-100 font-medium mb-1">Verstuurd!</p>
                     <p className="text-sm text-warm-500 font-light">
-                      We nemen zo snel mogelijk contact met u op voor een gratis AI-Scan gesprek.
+                      We nemen zo snel mogelijk contact met je op voor een gratis AI-Scan gesprek.
                     </p>
                   </div>
                 ) : submitStatus === "error" ? (
@@ -600,12 +600,12 @@ export default function AIScanQuiz() {
   const StepIcon = STEP_ICONS[step];
 
   const stepTitles = [
-    "In welke branche is uw bedrijf actief?",
-    "Hoeveel medewerkers heeft uw bedrijf?",
-    "Hoeveel uur per week besteedt u aan administratie?",
+    "In welke branche is jouw bedrijf actief?",
+    "Hoeveel medewerkers heeft jouw bedrijf?",
+    "Hoeveel uur per week ben je kwijt aan administratie?",
     "Welke taken kosten de meeste tijd?",
-    "Maakt u al gebruik van AI-tools?",
-    "Uw contactgegevens",
+    "Maak je al gebruik van AI-tools?",
+    "Jouw contactgegevens",
   ];
 
   const stepDescriptions = [
@@ -613,8 +613,8 @@ export default function AIScanQuiz() {
     "De bedrijfsgrootte bepaalt welke automatiseringen het meest impact hebben.",
     "Hoe meer administratie, hoe groter het besparingspotentieel.",
     "Selecteer alle taken die van toepassing zijn.",
-    "We stemmen onze aanbevelingen af op uw huidige situatie.",
-    "Vul uw gegevens in zodat we contact kunnen opnemen.",
+    "We stemmen onze aanbevelingen af op jouw huidige situatie.",
+    "Vul je gegevens in zodat we contact kunnen opnemen.",
   ];
 
   return (
@@ -634,11 +634,11 @@ export default function AIScanQuiz() {
             Gratis AI-Scan
           </span>
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-800 text-warm-50 text-balance">
-            Ontdek uw automatiseringspotentieel
+            Ontdek jouw automatiseringspotentieel
           </h2>
           <p className="mt-4 text-base sm:text-lg text-warm-500 max-w-2xl mx-auto text-balance px-2 font-light">
             Beantwoord 6 korte vragen en ontvang direct een persoonlijke
-            AI-score met concrete aanbevelingen voor uw bedrijf.
+            AI-score met concrete aanbevelingen voor jouw bedrijf.
           </p>
         </motion.div>
 
@@ -758,7 +758,7 @@ export default function AIScanQuiz() {
                               naam: "",
                             }));
                           }}
-                          placeholder="Uw volledige naam"
+                          placeholder="Jouw naam"
                           className={`w-full px-4 py-3 rounded-xl bg-dark-800/30 border ${
                             contactErrors.naam
                               ? "border-accent-600/50"
@@ -814,7 +814,7 @@ export default function AIScanQuiz() {
                               bedrijf: e.target.value,
                             }))
                           }
-                          placeholder="Uw bedrijfsnaam"
+                          placeholder="Jouw bedrijfsnaam"
                           className="w-full px-4 py-3 rounded-xl bg-dark-800/30 border border-warm-800/20 text-warm-100 placeholder-warm-700 focus:outline-none focus:border-brand-600/50 focus:ring-1 focus:ring-brand-600/20 transition-all"
                         />
                       </div>

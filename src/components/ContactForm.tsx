@@ -79,11 +79,11 @@ export default function ContactForm() {
               <CheckCircle2 className="w-7 h-7 text-brand-400" />
             </div>
             <h3 className="font-display text-2xl font-700 text-warm-50 mb-3">
-              Bedankt voor uw aanvraag!
+              Top, aanvraag ontvangen!
             </h3>
             <p className="text-warm-500 font-light">
-              We nemen binnen 24 uur contact met u op om uw gratis AI-Scan in te
-              plannen. Check ook uw inbox voor een bevestiging.
+              We nemen binnen 24 uur contact met je op om de gratis AI-Scan in te
+              plannen. Check ook je inbox voor een bevestiging.
             </p>
           </motion.div>
         </div>
@@ -104,7 +104,7 @@ export default function ContactForm() {
         <SectionHeader
           badge="Gratis AI-Scan"
           title="Klaar om te automatiseren?"
-          description="Vraag een gratis AI-Scan aan. 30 minuten gesprek + een concreet rapport met aanbevelingen voor uw bedrijf. Vrijblijvend en zonder verplichtingen."
+          description="Vraag een gratis AI-Scan aan. 30 minuten gesprek en een concreet rapport met aanbevelingen voor jouw bedrijf. Vrijblijvend, geen verplichtingen."
         />
 
         <motion.div
@@ -121,17 +121,17 @@ export default function ContactForm() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-warm-400 mb-2">Naam *</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Uw volledige naam" className={inputClasses(!!errors.name)} />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Jouw naam" className={inputClasses(!!errors.name)} />
                 {errors.name && <p className="mt-1 text-xs text-accent-400 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.name}</p>}
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-warm-400 mb-2">E-mail *</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="uw@email.nl" className={inputClasses(!!errors.email)} />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} placeholder="je@email.nl" className={inputClasses(!!errors.email)} />
                 {errors.email && <p className="mt-1 text-xs text-accent-400 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.email}</p>}
               </div>
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-warm-400 mb-2">Bedrijfsnaam *</label>
-                <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Uw bedrijfsnaam" className={inputClasses(!!errors.company)} />
+                <input type="text" id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Jouw bedrijfsnaam" className={inputClasses(!!errors.company)} />
                 {errors.company && <p className="mt-1 text-xs text-accent-400 flex items-center gap-1"><AlertCircle className="w-3 h-3" />{errors.company}</p>}
               </div>
               <div>

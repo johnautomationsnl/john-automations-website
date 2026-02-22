@@ -40,7 +40,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 pt-24 sm:pt-28 pb-12 sm:pb-16">
         <div className="text-center">
 
           {/* Label */}
@@ -76,7 +76,7 @@ export default function Hero() {
             className="mt-8 text-base sm:text-lg text-warm-400 max-w-2xl mx-auto text-balance font-light leading-relaxed"
           >
             Een digitale medewerker die jouw klantcontact afhandelt, leads opvolgt en de
-            administratie bijhoudt — automatisch, dag en nacht. Jij hoeft er niks van te
+            administratie bijhoudt. Automatisch, dag en nacht. Jij hoeft er niks van te
             begrijpen. Wij bouwen het, jij plukt de vruchten.
           </motion.p>
 

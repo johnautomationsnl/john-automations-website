@@ -38,6 +38,15 @@ body {
   background: #524c3e;
 }
 
+/* Hide scrollbar utility */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 /* Gradient text utility */
 .gradient-text {
   background: linear-gradient(135deg, #3ba683 0%, #2d8a6e 40%, #f59e0b 100%);

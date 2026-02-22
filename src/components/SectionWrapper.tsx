@@ -11,7 +11,7 @@ interface SectionWrapperProps {
 
 export default function SectionWrapper({ id, children, className = "" }: SectionWrapperProps) {
   return (
-    <section id={id} className={`relative py-20 sm:py-28 ${className}`}>
+    <section id={id} className={`relative py-14 sm:py-20 lg:py-28 ${className}`}>
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">{children}</div>
     </section>
   );
@@ -32,7 +32,7 @@ export function SectionHeader({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.7 }}
-      className="text-center mb-14"
+      className="text-center mb-10 sm:mb-14"
     >
       <span className="inline-block px-3 py-1 text-[11px] font-mono font-medium tracking-widest uppercase text-brand-400 bg-brand-900/30 border border-brand-800/30 rounded-full mb-5">
         {badge}

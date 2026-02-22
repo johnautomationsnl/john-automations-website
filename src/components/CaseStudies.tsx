@@ -85,7 +85,7 @@ export default function CaseStudies() {
       <SectionHeader
         badge="Scenario's"
         title="Zo werkt het in de praktijk"
-        description="Realistische voorbeelden van hoe AI uw bedrijf kan transformeren. Van probleem naar concrete resultaten."
+        description="Realistische voorbeelden van hoe AI jouw bedrijf kan transformeren. Van probleem naar concreet resultaat."
       />
 
       <motion.div
