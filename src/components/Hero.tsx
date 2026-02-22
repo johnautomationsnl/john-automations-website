@@ -1,15 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Bot, Clock, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Particles } from "./magicui/particles";
 import { ShimmerButton } from "./magicui/shimmer-button";
-
-const pills = [
-  { icon: Bot, label: "AI-medewerker voor jouw bedrijf" },
-  { icon: Clock, label: "24/7 actief, ook in het weekend" },
-  { icon: TrendingUp, label: "Resultaat binnen 2 weken" },
-];
 
 export default function Hero() {
   return (
@@ -75,9 +69,8 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-8 text-base sm:text-lg text-warm-400 max-w-2xl mx-auto text-balance font-light leading-relaxed"
           >
-            Een digitale medewerker die jouw klantcontact afhandelt, leads opvolgt en de
-            administratie bijhoudt. Automatisch, dag en nacht. Jij hoeft er niks van te
-            begrijpen. Wij bouwen het, jij plukt de vruchten.
+            Stop met het zien van AI als een &lsquo;chatbot&rsquo;. Zie het als de meest loyale,
+            razendsnelle medewerker die je ooit zult aannemen.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -107,24 +100,6 @@ export default function Hero() {
             >
               Hoe werkt het?
             </a>
-          </motion.div>
-
-          {/* Feature pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.0 }}
-            className="mt-12 flex flex-wrap items-center justify-center gap-3"
-          >
-            {pills.map((pill, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-warm-900/30 border border-warm-800/20 text-xs text-warm-400 font-light"
-              >
-                <pill.icon className="w-3.5 h-3.5 text-brand-400" />
-                {pill.label}
-              </div>
-            ))}
           </motion.div>
 
           {/* Trust indicators */}
