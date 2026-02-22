@@ -477,29 +477,29 @@ export default function IndustryPages() {
         description="Ontdek hoe AI specifiek voor jouw branche werkt. Concrete resultaten, geen vage beloftes."
       />
 
-      {/* Tabs — horizontally scrollable on mobile */}
-      <div className="mb-10 -mx-5 sm:mx-0">
-        <div className="overflow-x-auto scrollbar-none px-5 sm:px-0">
-          <div className="flex gap-2 p-2 rounded-xl warm-card w-max sm:w-auto sm:flex-wrap sm:justify-center mx-auto sm:max-w-4xl">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
-                  activeTab === tab.id
-                    ? "bg-brand-600 text-white shadow-lg shadow-brand-600/20"
-                    : "text-warm-500 hover:text-warm-200 hover:bg-warm-900/20"
-                }`}
-              >
-                <tab.icon className="w-4 h-4" />
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
+      {/* Layout: vertical tab list + content */}
+      <div className="flex flex-col lg:flex-row gap-6">
 
-      {/* Tab content */}
+        {/* Vertical tab list */}
+        <div className="flex flex-col gap-1.5 lg:w-56 flex-shrink-0">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl text-sm font-medium text-left transition-all duration-200 ${
+                activeTab === tab.id
+                  ? "bg-brand-600 text-white shadow-lg shadow-brand-600/20"
+                  : "text-warm-500 hover:text-warm-100 hover:bg-warm-900/20 warm-card"
+              }`}
+            >
+              <tab.icon className="w-4 h-4 flex-shrink-0" />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab content */}
+        <div className="flex-1 min-w-0">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
@@ -513,7 +513,7 @@ export default function IndustryPages() {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6"
           >
             {activeIndustry.features.map((feature, i) => (
               <motion.div
@@ -572,6 +572,8 @@ export default function IndustryPages() {
           </motion.div>
         </motion.div>
       </AnimatePresence>
+        </div> {/* end flex-1 content */}
+      </div> {/* end flex layout */}
     </SectionWrapper>
   );
 }
