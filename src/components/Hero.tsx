@@ -1,9 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Bot, Clock, TrendingUp } from "lucide-react";
 import { Particles } from "./magicui/particles";
 import { ShimmerButton } from "./magicui/shimmer-button";
+
+const pills = [
+  { icon: Bot, label: "AI-medewerker voor jouw bedrijf" },
+  { icon: Clock, label: "24/7 actief, ook in het weekend" },
+  { icon: TrendingUp, label: "Resultaat binnen 2 weken" },
+];
 
 export default function Hero() {
   return (
@@ -36,17 +42,18 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center">
-          {/* Small descriptor */}
+
+          {/* Label */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="font-mono text-xs tracking-[0.2em] uppercase text-brand-400 mb-8"
           >
-            AI-Specialist voor het Nederlandse MKB
+            AI-automatisering voor het Nederlandse MKB
           </motion.p>
 
-          {/* Main heading — asymmetric weight */}
+          {/* Main heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,10 +61,10 @@ export default function Hero() {
             className="font-display text-balance"
           >
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-200 text-warm-200 leading-[1.05]">
-              Jouw bedrijf.
+              Wij bouwen een
             </span>
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-800 text-warm-50 leading-[1.05] mt-1">
-              Slimmer <span className="text-brand-400">geautomatiseerd.</span>
+              AI-medewerker <span className="text-brand-400">voor jouw bedrijf.</span>
             </span>
           </motion.h1>
 
@@ -66,11 +73,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-8 text-base sm:text-lg text-warm-400 max-w-xl mx-auto text-balance font-light leading-relaxed"
+            className="mt-8 text-base sm:text-lg text-warm-400 max-w-2xl mx-auto text-balance font-light leading-relaxed"
           >
-            Wij nemen de saaie, herhalende taken uit jouw bedrijf over — zodat
-            jij je kunt richten op wat écht belangrijk is. Resultaat binnen 2
-            weken, en nee: je hoeft niks van techniek te snappen.
+            Een digitale medewerker die jouw klantcontact afhandelt, leads opvolgt en de
+            administratie bijhoudt — automatisch, dag en nacht. Jij hoeft er niks van te
+            begrijpen. Wij bouwen het, jij plukt de vruchten.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -95,25 +102,43 @@ export default function Hero() {
               </ShimmerButton>
             </a>
             <a
-              href="#diensten"
+              href="#ai-medewerker"
               className="inline-flex items-center gap-2 px-7 py-4 text-warm-300 hover:text-warm-50 border border-warm-800/40 hover:border-brand-700/40 rounded-xl transition-all duration-300 hover:bg-warm-900/20"
             >
-              Bekijk Diensten
+              Hoe werkt het?
             </a>
           </motion.div>
 
-          {/* Trust indicators — minimal */}
+          {/* Feature pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="mt-12 flex flex-wrap items-center justify-center gap-3"
+          >
+            {pills.map((pill, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-warm-900/30 border border-warm-800/20 text-xs text-warm-400 font-light"
+              >
+                <pill.icon className="w-3.5 h-3.5 text-brand-400" />
+                {pill.label}
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Trust indicators */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1.2 }}
-            className="mt-20 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-mono tracking-wider uppercase text-warm-600"
+            transition={{ duration: 1, delay: 1.3 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-mono tracking-wider uppercase text-warm-700"
           >
-            <span>Resultaat binnen 2 weken</span>
-            <span className="text-warm-800">·</span>
             <span>Actief in Zuid-Limburg</span>
             <span className="text-warm-800">·</span>
             <span>Gratis scan, geen verplichtingen</span>
+            <span className="text-warm-800">·</span>
+            <span>100% op maat</span>
           </motion.div>
         </div>
       </div>
