@@ -5,12 +5,12 @@ import { CheckCircle2, Zap, TrendingUp, Shield } from "lucide-react";
 import SectionWrapper, { SectionHeader } from "./SectionWrapper";
 
 const benefits = [
-  "Tot 80% tijdsbesparing op repetitieve taken",
-  "24/7 beschikbare klantenservice via AI-chatbots",
-  "Foutloze data-verwerking en administratie",
-  "Directe lead-opvolging zonder personeel",
-  "Naadloze integratie met uw bestaande systemen",
-  "Schaalbaar meegroeien zonder extra personeel",
+  "Tot 80% minder tijd kwijt aan herhalende taken",
+  "24/7 bereikbaar voor je klanten, ook 's nachts en in het weekend",
+  "Geen typefouten, geen vergeten mails, geen gemiste leads",
+  "Nieuwe klanten worden automatisch opgevolgd — zonder dat jij er aan te pas komt",
+  "Werkt gewoon samen met de tools die je al gebruikt",
+  "Groeit mee met je bedrijf, zonder extra personeel",
 ];
 
 const stats = [
@@ -27,8 +27,8 @@ export default function Solution() {
       <div className="relative">
         <SectionHeader
           badge="De Oplossing"
-          title="AI die écht werkt voor uw bedrijf"
-          description="Geen standaard oplossingen, maar op maat gemaakte automatiseringen die perfect aansluiten bij uw werkprocessen."
+          title="AI die écht werkt voor jouw bedrijf"
+          description="Geen kant-en-klare pakketten, maar iets dat we samen bouwen specifiek voor hoe jij werkt. Zodat het ook écht werkt."
         />
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">

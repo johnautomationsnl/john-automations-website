@@ -10,7 +10,7 @@ const services = [
     icon: Brain,
     title: "AI Integratie",
     description:
-      "Integreer krachtige AI-modellen in uw bestaande workflows. Van slimme data-analyse tot geautomatiseerde besluitvorming.",
+      "We koppelen slimme AI direct aan hoe jij al werkt. Denk aan automatische analyses, slimme beslissingen, of content die zichzelf genereert.",
     features: ["Woningbeschrijving in 30 sec", "Automatische materiaallijsten", "50 facturen per uur verwerkt"],
     color: "text-brand-400",
     bg: "bg-brand-900/20",
@@ -20,7 +20,7 @@ const services = [
     icon: Code2,
     title: "Custom Software",
     description:
-      "Op maat gebouwde applicaties die perfect passen bij uw bedrijfsprocessen. Van webapplicaties tot interne tools.",
+      "Heb je iets nodig dat nergens te koop is? Dan bouwen we het gewoon. Precies zoals jij het wil.",
     features: ["Klantportaal met realtime status", "Live bedrijfsoverzicht", "Boekhouding-CRM koppeling"],
     color: "text-accent-400",
     bg: "bg-accent-900/20",
@@ -30,7 +30,7 @@ const services = [
     icon: Workflow,
     title: "Proces Automatisering",
     description:
-      "Automatiseer repetitieve bedrijfsprocessen en bespaar uren per week. Van facturatie tot lead-opvolging.",
+      "Alles wat je nu nog handmatig doet, kan waarschijnlijk automatisch. We besparen je uren per week.",
     features: ["Offerte in 2 minuten", "Leads auto-opgevolgd", "Klantgegevens direct in systeem"],
     color: "text-brand-300",
     bg: "bg-brand-900/15",
@@ -40,7 +40,7 @@ const services = [
     icon: MessageSquareText,
     title: "AI Chatbots",
     description:
-      "Intelligente chatbots die 24/7 uw klanten helpen, leads kwalificeren en afspraken inplannen.",
+      "Een slimme assistent die jouw klanten helpt, vragen beantwoordt en afspraken inplant — ook als jij slaapt.",
     features: ["Antwoord om 3 uur 's nachts", "Bot plant bezichtiging", "Afspraak direct in agenda"],
     color: "text-accent-300",
     bg: "bg-accent-900/15",
@@ -53,8 +53,8 @@ export default function Services() {
     <SectionWrapper id="diensten">
       <SectionHeader
         badge="Diensten"
-        title="Wat wij voor u bouwen"
-        description="Van strategie tot implementatie. Complete AI-oplossingen op maat voor uw MKB-bedrijf."
+        title="Wat wij voor jou bouwen"
+        description="Van gesprek tot live systeem. Alles op maat, specifiek voor jouw bedrijf."
       />
 
       <motion.div

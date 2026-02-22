@@ -54,7 +54,7 @@ export default function Hero() {
             className="font-display text-balance"
           >
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-200 text-warm-200 leading-[1.05]">
-              Uw bedrijf.
+              Jouw bedrijf.
             </span>
             <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-800 text-warm-50 leading-[1.05] mt-1">
               Slimmer <span className="text-brand-400">geautomatiseerd.</span>
@@ -68,8 +68,9 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-8 text-base sm:text-lg text-warm-400 max-w-xl mx-auto text-balance font-light leading-relaxed"
           >
-            Op maat gemaakte AI-oplossingen en automatiseringen die uw MKB-bedrijf
-            écht vooruit helpen. Meer tijd, minder gedoe.
+            Wij nemen de saaie, herhalende taken uit jouw bedrijf over — zodat
+            jij je kunt richten op wat écht belangrijk is. Resultaat binnen 2
+            weken, en nee: je hoeft niks van techniek te snappen.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -108,11 +109,11 @@ export default function Hero() {
             transition={{ duration: 1, delay: 1.2 }}
             className="mt-20 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-mono tracking-wider uppercase text-warm-600"
           >
-            <span>100% Op Maat</span>
+            <span>Resultaat binnen 2 weken</span>
             <span className="text-warm-800">·</span>
-            <span>MKB-Specialist</span>
+            <span>Actief in Zuid-Limburg</span>
             <span className="text-warm-800">·</span>
-            <span>Persoonlijke Aanpak</span>
+            <span>Gratis scan, geen verplichtingen</span>
           </motion.div>
         </div>
       </div>

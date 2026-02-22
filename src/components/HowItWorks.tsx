@@ -10,23 +10,23 @@ const steps = [
     icon: Search,
     title: "Gratis AI-Scan",
     description:
-      "We beginnen met een vrijblijvend gesprek van 30 minuten. We analyseren uw huidige processen en identificeren waar AI en automatisering de meeste impact hebben. U ontvangt een concreet rapport met aanbevelingen.",
+      "We starten met een gratis gesprek van 30 minuten. Jij vertelt hoe je bedrijf werkt, wij kijken waar de meeste winst te halen valt. Je krijgt daarna een concreet overzicht van wat mogelijk is.",
     highlight: "30 min gesprek + rapport",
   },
   {
     number: "02",
     icon: Lightbulb,
-    title: "Strategie & Ontwerp",
+    title: "Plan op Maat",
     description:
-      "Op basis van de AI-Scan ontwerpen we een oplossing op maat. We maken een helder plan met tijdlijn, kosten en verwachte resultaten. Geen verrassingen, volledige transparantie.",
-    highlight: "Helder plan & vaste prijs",
+      "We maken een helder plan: wat gaan we bouwen, wanneer is het klaar, en wat kost het. Geen vage beloften, gewoon duidelijke afspraken.",
+    highlight: "Helder plan & heldere offerte",
   },
   {
     number: "03",
     icon: Rocket,
     title: "Bouwen & Lanceren",
     description:
-      "We bouwen uw oplossing, testen uitvoerig en lanceren samen. Na de lancering blijven we beschikbaar voor support en optimalisatie. Uw succes is ons succes.",
+      "We bouwen het, testen het grondig, en zetten het live. Daarna blijven we gewoon beschikbaar als er iets is. Jij hoeft er niks aan te doen.",
     highlight: "Support & optimalisatie",
   },
 ];
@@ -40,7 +40,7 @@ export default function HowItWorks() {
         <SectionHeader
           badge="Werkwijze"
           title="Hoe werken wij?"
-          description="In drie heldere stappen van probleem naar oplossing. Simpel, transparant en effectief."
+          description="Zo simpel mogelijk. Geen gedoe, geen verrassingen — gewoon van gesprek naar live systeem."
         />
 
         <div className="relative">

@@ -9,37 +9,37 @@ const painPoints = [
     icon: Clock,
     title: "Tijdverspilling",
     description:
-      "Uren per dag kwijt aan handmatige, repetitieve taken die eenvoudig geautomatiseerd kunnen worden.",
+      "Je bent uren per dag bezig met dingen die een computer in seconden kan. Dat voelt niet goed, en dat is het ook niet.",
   },
   {
     icon: TrendingDown,
     title: "Omzetverlies",
     description:
-      "Leads en klanten die door de mazen van het net glippen door trage opvolging en handmatige processen.",
+      "Potentiële klanten haken af omdat je te laat reageert of iets vergeet op te volgen. Dat kost je gewoon geld.",
   },
   {
     icon: AlertTriangle,
     title: "Menselijke Fouten",
     description:
-      "Kostbare fouten in administratie, data-invoer en communicatie die uw reputatie schaden.",
+      "Je typt iets over, vergeet een mail, of stuurt een verkeerd bedrag. Kleine foutjes die grote gevolgen kunnen hebben.",
   },
   {
     icon: Users,
-    title: "Personeelstekort",
+    title: "Te Weinig Personeel",
     description:
-      "Moeite met het vinden van personeel terwijl het werk zich opstapelt en de druk toeneemt.",
+      "Je kunt niemand vinden, maar het werk blijft binnenstromen. Je kunt dit niet oplossen door harder te werken.",
   },
   {
     icon: FileX,
-    title: "Verouderde Systemen",
+    title: "Losse Systemen",
     description:
-      "Software die niet met elkaar praat, losse spreadsheets en geen overzicht over uw bedrijfsprocessen.",
+      "Eén programma hier, een spreadsheet daar, en niks praat met elkaar. Je verliest er je hoofd bij.",
   },
   {
     icon: Repeat,
     title: "Concurrentie Loopt Voor",
     description:
-      "Terwijl concurrenten AI omarmen, blijft u achter met traditionele werkwijzen en verliest u marktaandeel.",
+      "Andere bedrijven in jouw branche automatiseren al. Als jij wacht, wordt het gat alleen maar groter.",
   },
 ];
 
@@ -64,8 +64,8 @@ export default function PainPoints() {
     <SectionWrapper id="pijnpunten">
       <SectionHeader
         badge="Het Probleem"
-        title="Herkent u deze uitdagingen?"
-        description="De meeste MKB-bedrijven lopen dagelijks tegen dezelfde problemen aan. Het goede nieuws: ze zijn allemaal op te lossen."
+        title="Herken je dit?"
+        description="De meeste ondernemers lopen elke dag tegen precies dezelfde dingen aan. Het goede nieuws: dit is allemaal op te lossen."
       />
 
       <motion.div

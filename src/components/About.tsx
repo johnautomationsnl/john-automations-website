@@ -49,21 +49,20 @@ export default function About() {
           >
             <div className="space-y-4 text-warm-400 leading-relaxed font-light">
               <p className="text-base sm:text-lg">
-                Hallo! Ik ben <span className="text-warm-100 font-medium">Melvin</span>, AI-specialist
-                en software developer uit Zuid-Limburg. Ik help ondernemers in het MKB om{" "}
-                <span className="text-brand-400">slimmer te werken</span> met op maat gemaakte
-                AI-oplossingen en automatiseringen.
+                Hey! Ik ben <span className="text-warm-100 font-medium">Melvin</span> — ik bouw
+                AI-automatiseringen voor ondernemers in het MKB. Gewoon vanuit{" "}
+                <span className="text-brand-400">Zuid-Limburg</span>, voor bedrijven zoals die van jou.
               </p>
               <p className="text-base sm:text-lg">
-                Wat mij drijft? Ik zie dagelijks ondernemers die{" "}
-                <span className="text-warm-100">uren verspillen</span> aan taken die een computer
-                in seconden kan doen. Van het handmatig opvolgen van leads tot het overtypen van
-                gegevens. Het kan allemaal slimmer. En dat is precies wat ik bouw.
+                Ik zie elke dag hoe ondernemers{" "}
+                <span className="text-warm-100">uren verspillen</span> aan dingen die een computer
+                in seconden kan afhandelen. Van leads opvolgen tot gegevens overtypen. Dat kan zoveel
+                beter. En dat is precies wat ik bouw.
               </p>
               <p className="text-base sm:text-lg">
-                Geen standaard pakketten, geen one-size-fits-all. Elke oplossing wordt{" "}
-                <span className="text-brand-400">specifiek voor uw bedrijf</span> ontwikkeld.
-                En het mooiste? U hoeft er zelf niets van te begrijpen. Dat is mijn werk.
+                Geen standaard pakketten. Alles wat ik maak is{" "}
+                <span className="text-brand-400">specifiek voor jouw bedrijf</span>.
+                En het mooiste: jij hoeft nergens verstand van te hebben. Dat is mijn werk, niet het jouwe.
               </p>
             </div>
 

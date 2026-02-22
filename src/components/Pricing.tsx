@@ -10,15 +10,17 @@ const tiers = [
     price: "€499",
     period: "/maand",
     prefix: "Vanaf",
-    description: "Ideaal voor kleine ondernemers die willen starten met AI",
+    description: "Voor ondernemers die willen starten met 1 concrete automatisering — snel live, geen gedoe.",
     icon: Zap,
     color: "text-brand-400",
     bg: "bg-brand-900/20",
     featured: false,
     features: [
-      "1 AI-automatisering",
-      "E-mail/chat support",
-      "Maandelijks rapport",
+      "1 volledig gebouwde automatisering",
+      "Onboarding & implementatie inbegrepen",
+      "E-mail/chat support (reactie binnen 24u)",
+      "Maandelijks rapport & kleine aanpassingen",
+      "Eenmalige setup: €250 – €500",
     ],
   },
   {
@@ -26,15 +28,18 @@ const tiers = [
     price: "€999",
     period: "/maand",
     prefix: "Vanaf",
-    description: "Ideaal voor groeiende bedrijven met meerdere processen",
+    description: "Voor groeiende bedrijven die meerdere processen willen automatiseren en sneller willen schalen.",
     icon: Sparkles,
     color: "text-accent-400",
     bg: "bg-accent-900/20",
     featured: true,
     features: [
-      "Tot 3 AI-automatiseringen",
-      "Prioriteit support",
-      "Wekelijks rapport + optimalisatie",
+      "Tot 3 volledig gebouwde automatiseringen",
+      "Onboarding & implementatie inbegrepen",
+      "Prioriteit support (reactie binnen 4u)",
+      "Wekelijks rapport + actieve optimalisatie",
+      "2u aanpassingen per maand inbegrepen",
+      "Eenmalige setup: €500 – €1.000",
     ],
   },
   {
@@ -42,15 +47,18 @@ const tiers = [
     price: "Op maat",
     period: "",
     prefix: "",
-    description: "Ideaal voor grotere bedrijven met complexe workflows",
+    description: "Voor grotere bedrijven met complexe workflows en meerdere afdelingen. Alles wat u nodig heeft.",
     icon: Crown,
     color: "text-accent-300",
     bg: "bg-accent-900/15",
     featured: false,
     features: [
       "Onbeperkt automatiseringen",
-      "Dedicated support",
-      "Dagelijks monitoring + optimalisatie",
+      "Dedicated contactpersoon",
+      "Directe support (reactie binnen 1u)",
+      "Dagelijkse monitoring & optimalisatie",
+      "Maatwerk integraties & koppelingen",
+      "Setup & kosten volledig op maat",
     ],
   },
 ];
@@ -80,7 +88,7 @@ export default function Pricing() {
         <SectionHeader
           badge="Prijzen"
           title="Transparante prijsindicatie"
-          description="Duidelijke prijzen, geen verrassingen. Start altijd met een gratis AI-Scan."
+          description="Duidelijke prijzen, geen verrassingen. U weet vooraf exact wat u krijgt — en wat het kost."
         />
 
         <motion.div
@@ -173,8 +181,9 @@ export default function Pricing() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="text-center text-xs text-warm-600 mt-10 max-w-2xl mx-auto font-light"
         >
-          Alle prijzen excl. BTW. Eenmalige setup kosten afhankelijk van
-          complexiteit. Start altijd met een gratis AI-Scan.
+          Alle prijzen excl. BTW. Setup kosten zijn eenmalig en afhankelijk van
+          de complexiteit van uw automatisering — u krijgt altijd een heldere
+          offerte vooraf. Start altijd met een gratis AI-Scan.
         </motion.p>
       </div>
     </SectionWrapper>
