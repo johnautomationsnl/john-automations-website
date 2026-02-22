@@ -8,7 +8,7 @@ const benefits = [
   "Tot 80% minder tijd kwijt aan herhalende taken",
   "24/7 bereikbaar voor je klanten, ook 's nachts en in het weekend",
   "Geen typefouten, geen vergeten mails, geen gemiste leads",
-  "Nieuwe klanten worden automatisch opgevolgd — zonder dat jij er aan te pas komt",
+  "Nieuwe klanten worden automatisch opgevolgd, zonder dat jij er aan te pas komt",
   "Werkt gewoon samen met de tools die je al gebruikt",
   "Groeit mee met je bedrijf, zonder extra personeel",
 ];

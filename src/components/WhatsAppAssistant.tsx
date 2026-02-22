@@ -41,7 +41,7 @@ export default function WhatsAppAssistant() {
       <SectionHeader
         badge="WhatsApp AI Assistent"
         title="Nooit meer een klant missen op WhatsApp"
-        description="Een slimme AI-assistent op jouw eigen WhatsApp-nummer. Beantwoordt vragen, kwalificeert leads en plant afspraken — volledig automatisch."
+        description="Een slimme AI-assistent op jouw eigen WhatsApp-nummer. Beantwoordt vragen, kwalificeert leads en plant afspraken. Volledig automatisch."
       />
 
       {/* Feature cards */}
@@ -85,7 +85,7 @@ export default function WhatsAppAssistant() {
           Gratis AI-Scan Aanvragen
           <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
         </a>
-        <p className="mt-3 text-sm text-warm-600 font-light">Vrijblijvend — geen verplichtingen</p>
+        <p className="mt-3 text-sm text-warm-600 font-light">Vrijblijvend, geen verplichtingen</p>
       </motion.div>
     </SectionWrapper>
   );

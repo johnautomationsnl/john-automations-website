@@ -49,7 +49,7 @@ export default function About() {
           >
             <div className="space-y-4 text-warm-400 leading-relaxed font-light">
               <p className="text-base sm:text-lg">
-                Hey! Ik ben <span className="text-warm-100 font-medium">Melvin</span> — ik bouw
+                Hey! Ik ben <span className="text-warm-100 font-medium">Melvin</span>. Ik bouw
                 AI-automatiseringen voor ondernemers in het MKB. Gewoon vanuit{" "}
                 <span className="text-brand-400">Zuid-Limburg</span>, voor bedrijven zoals die van jou.
               </p>

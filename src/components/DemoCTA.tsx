@@ -23,7 +23,7 @@ export default function DemoCTA() {
                 Liever eerst zien hoe het werkt?
               </p>
               <p className="text-warm-500 text-sm font-light">
-                Plan een gratis demo — we laten je live zien wat er mogelijk is voor jouw situatie.
+                Plan een gratis demo en we laten je live zien wat er mogelijk is voor jouw situatie.
               </p>
             </div>
           </div>

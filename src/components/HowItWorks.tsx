@@ -40,7 +40,7 @@ export default function HowItWorks() {
         <SectionHeader
           badge="Werkwijze"
           title="Hoe werken wij?"
-          description="Zo simpel mogelijk. Geen gedoe, geen verrassingen — gewoon van gesprek naar live systeem."
+          description="Zo simpel mogelijk. Geen gedoe, geen verrassingen. Gewoon van gesprek naar live systeem."
         />
 
         <div className="relative">

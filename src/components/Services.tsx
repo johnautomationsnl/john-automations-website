@@ -40,7 +40,7 @@ const services = [
     icon: MessageSquareText,
     title: "AI Chatbots",
     description:
-      "Een slimme assistent die jouw klanten helpt, vragen beantwoordt en afspraken inplant — ook als jij slaapt.",
+      "Een slimme assistent die jouw klanten helpt, vragen beantwoordt en afspraken inplant. Ook als jij slaapt.",
     features: ["Antwoord om 3 uur 's nachts", "Bot plant bezichtiging", "Afspraak direct in agenda"],
     color: "text-accent-300",
     bg: "bg-accent-900/15",

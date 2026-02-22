@@ -10,7 +10,7 @@ const steps = [
     number: "01",
     title: "Eerst luisteren",
     description:
-      "We beginnen altijd met een gratis gesprek. Jij vertelt hoe je bedrijf werkt, waar je tegenaan loopt en wat je wil verbeteren. Geen verkoopverhaal — gewoon een eerlijk gesprek.",
+      "We beginnen altijd met een gratis gesprek. Jij vertelt hoe je bedrijf werkt, waar je tegenaan loopt en wat je wil verbeteren. Geen verkoopverhaal, gewoon een eerlijk gesprek.",
     color: "text-brand-400",
     bg: "bg-brand-900/20",
   },

@@ -78,7 +78,7 @@ export default function AIEmployee() {
           </h2>
           <p className="text-warm-400 text-base sm:text-lg leading-relaxed font-light">
             De meeste ondernemers horen &ldquo;AI&rdquo; en denken aan een domme pop-up op een website. Fout.
-            Een AI-medewerker zit diep in je systemen en werkt 24/7 — zonder pauze, zonder fouten,
+            Een AI-medewerker zit diep in je systemen en werkt 24/7, zonder pauze, zonder fouten,
             zonder salaris.
           </p>
         </motion.div>
@@ -124,7 +124,7 @@ export default function AIEmployee() {
           </h3>
           <p className="text-warm-400 text-sm sm:text-base leading-relaxed font-light mb-6">
             Je overhead daalt, je snelheid schiet omhoog en je marges worden gezond. Een
-            AI-medewerker haalt de ruis uit je bedrijf — zodat alleen het resultaat overblijft.
+            AI-medewerker haalt de ruis uit je bedrijf, zodat alleen het resultaat overblijft.
           </p>
           <a
             href="#contact"
