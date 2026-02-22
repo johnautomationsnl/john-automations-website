@@ -4,6 +4,7 @@ import TechStack from "@/components/TechStack";
 import StatsBar from "@/components/StatsBar";
 import PainPoints from "@/components/PainPoints";
 import Solution from "@/components/Solution";
+import AIEmployee from "@/components/AIEmployee";
 import Services from "@/components/Services";
 import WhatsAppAssistant from "@/components/WhatsAppAssistant";
 import IndustryPages from "@/components/IndustryPages";
@@ -25,6 +26,7 @@ export default function Home() {
         <StatsBar />
         <PainPoints />
         <Solution />
+        <AIEmployee />
         <Services />
         <WhatsAppAssistant />
         <IndustryPages />
